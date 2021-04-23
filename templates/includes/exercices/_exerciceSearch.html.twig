@@ -1,0 +1,28 @@
+<div class="quick-search">
+    <div class="qs-title">
+        <h3>Recherche rapide</h3>
+    </div>
+    <div class="qs-links">
+        {% set n = 1 %}
+        {% for exercice in exercices %}
+            {% if exercice.difficulty == 1 and n == 1 %}
+                <a href="{{ path('search_eEasy') }}">Facile</a>
+            {% elseif exercice.difficulty == 2 and n == 2 %}
+                <a href="{{ path('search_eMedium') }}">Moyen</a>
+            {% elseif exercice.difficulty == 3 and n == 3 %}
+                <a href="{{ path('search_eHard') }}">Difficile</a>
+            {% endif %}
+            {% set n = n + 1 %}
+        {% endfor %}
+        {% set n = 0 %}
+        {% for exercice in exercices %}
+            {% if exercice.isPremium == 0 and n == 0 %}
+                <a href="{{ path('search_eFree') }}">Gratuit</a>
+                {% set n = 1 %}
+            {% elseif exercice.isPremium == 1 and n == 1 %}
+                <a href="{{ path('search_ePremium') }}">Premium</a>
+                {% set n = 2 %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

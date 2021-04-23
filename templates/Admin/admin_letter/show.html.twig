@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Letter{% endblock %}
+
+{% block body %}
+    <h1>Letter</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ letter.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ letter.name }}</td>
+            </tr>
+            <tr>
+                <th>Symbol</th>
+                <td>{{ letter.symbol }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_letter_index') }}">back to list</a>
+
+    <a href="{{ path('admin_letter_edit', {'id': letter.id}) }}">edit</a>
+
+    {{ include('Admin/admin_letter/_delete_form.html.twig') }}
+{% endblock %}

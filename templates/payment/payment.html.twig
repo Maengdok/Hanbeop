@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/Payment/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% if not is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+        <div class="payment-title">
+            <h1>La fenêtre de paiement va se lancer, veuillez patienter</h1>
+        </div>
+        <script>
+            (function() {
+                const stripe = Stripe('pk_test_51IgovzJufIouFh4tNu85wdlkVYZo69eCip6DNPzMP1UUKx1oYmKtsYJvEPN8fb5NjpoBhuHrrUlr159DDe1zkfan00ScmBz9eQ');
+                stripe.redirectToCheckout({
+                    sessionId: "{{ sessionId }}"
+                });
+            })();
+        </script>
+    {% else %}
+        <div class="payment-title">
+            <h1>Veuillez vous authentifier</h1>
+        </div>
+    {% endif %} 
+{% endblock %}

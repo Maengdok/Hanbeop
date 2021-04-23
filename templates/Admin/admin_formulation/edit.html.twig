@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Formulation{% endblock %}
+
+{% block body %}
+    <h1>Edit Formulation</h1>
+
+    {{ include('Admin/admin_formulation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_formulation_index') }}">back to list</a>
+
+    {{ include('Admin/admin_formulation/_delete_form.html.twig') }}
+{% endblock %}

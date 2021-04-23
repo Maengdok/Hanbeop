@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Meaning{% endblock %}
+
+{% block body %}
+    <h1>Meaning</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ meaning.id }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ meaning.content }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_meaning_index') }}">back to list</a>
+
+    <a href="{{ path('admin_meaning_edit', {'id': meaning.id}) }}">edit</a>
+
+    {{ include('Admin/admin_meaning/_delete_form.html.twig') }}
+{% endblock %}

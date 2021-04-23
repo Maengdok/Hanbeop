@@ -1,0 +1,81 @@
+/**********************/
+/**** docu & about ****/
+/**********************/
+
+.docu-page, .about-page {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+
+.docu-menu, .about-menu {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #EEEEEE;
+    width: 250px;
+}
+
+.docu-section, .about-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.docu-parts, .about-parts {
+    width: 80%;
+}
+
+.docu-title, .about-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.docu-title h2, .about-title h2 {
+    margin: 20px 0 0 20px;
+}
+
+.docu-separator, .about-separator {
+    width: 100%;
+    height: 1px;
+    background: rgb(133, 132, 132);
+    margin-bottom: 20px;
+}
+
+.hangeul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hangeul table {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+.hangeul h4 {
+    text-align: center;
+}
+
+.hangeul table th {
+    padding: 2px 10px 2px 10px;
+}
+
+.hangeul table td {
+    border-top: 1px solid black;
+}
+
+.tr-hover:hover {
+    background:rgba(93, 157, 240, 0.884);
+}

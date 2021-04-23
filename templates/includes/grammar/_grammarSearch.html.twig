@@ -1,0 +1,16 @@
+<div class="quick-search">
+    <div class="qs-title">
+        <h3>Recherche rapide</h3>
+    </div>
+    <div class="qs-links">
+        {% for level in levels %}
+            <a href="{{ path('search_gLevel', {id: level.id}) }}">{{ level.name }}</a>
+        {% endfor %}
+        {% set n = 0 %}
+        {% for category in categories %}
+            {% if category.name == 'Particule' or category.name == 'Expression' %}
+                <a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

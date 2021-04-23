@@ -1,0 +1,81 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/Profile/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <span><a href="{{ path('index') }}"><i class="fas fa-home"></i> Home</a> > Mon profil</span>
+    </div>
+    <div class="profile-page">
+        {% if is_granted('ROLE_USER') %}    
+            <div class="side-menus">
+                {% if not is_granted('ROLE_PREMIUM') %}
+                    {% include "includes/exercices/_premiumMenu.html.twig" %}
+                {% endif %}
+            </div>
+            <div class="profile-section">
+                <div class="title-path">
+                    <div class="head-title">
+                        <h1>Mon profil</h1>
+                    </div>
+                </div>
+                <span class="separator"></span>
+                <div class="profile-parts">
+                    <div class="profile-title">
+                        <h2>Mes informations</h2>
+                    </div>
+                    <div class="profile-separator"></div>
+                    <div class="informations">
+                        {% for message in app.flashes('profile_edit_success') %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ message }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                        {{ form_start(formUser) }}
+                            <div class="row">
+                                <div class="col">
+                                    {{ form_row(formUser.pseudo) }}    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col side-side">
+                                    {{ form_row(formUser.fname) }}
+                                    {{ form_row(formUser.name) }}
+                                </div>
+                            </div>                       
+                            <div class="row">
+                                <div class="col">
+                                    {{ form_row(formUser.email) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{ form_row(formUser.birthDate) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{ form_row(formUser.password) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{ form_row(formUser.password) }}
+                                </div>
+                            </div>
+                            <div class="valid-btn">
+                                <button type="submit" class="btn valid-btn">S'enregistrer</button>
+                            </div>
+                        {{ form_end(formUser) }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

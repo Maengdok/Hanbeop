@@ -1,0 +1,102 @@
+/***************/
+/*** profile ***/
+/***************/
+
+.profile-page {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+
+.profile-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-parts {
+    width: 80%;
+}
+
+.profile-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.profile-title h2 {
+    margin: 20px 0 0 20px;
+}
+
+.profile-separator {
+    width: 100%;
+    height: 1px;
+    background: rgb(133, 132, 132);
+    margin-bottom: 20px;
+}
+
+.informations {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.informations form .row .col div {
+    display: flex;
+    flex-direction: column;
+}
+
+.informations label {
+    margin: 20px 0 10px 0;
+}
+
+.informations input {
+    width: 90%;
+    margin: auto auto;
+}
+
+#user_form_birthDate {
+    display: flex;
+    flex-direction: row;
+    margin: auto auto;
+
+}
+
+#user_form_birthDate select {
+    width: 100px;
+    margin: 0 10px 0 10px;
+}
+
+.favorites-card {
+    width: 20%;
+    margin: 0 10px 0 10px;
+}
+
+.favorites-title {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    background: #022859;
+    color: white;
+}
+
+.favorites-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    background: #EEEEEE;
+}
+
+.favorites-body a {
+    padding: 5px;
+}

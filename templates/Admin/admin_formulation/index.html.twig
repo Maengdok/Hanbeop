@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulation index{% endblock %}
+
+{% block body %}
+    <h1>Formulation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulation in formulations %}
+            <tr>
+                <td>{{ formulation.id }}</td>
+                <td>{{ formulation.content }}</td>
+                <td>
+                    <a href="{{ path('admin_formulation_show', {'id': formulation.id}) }}">show</a>
+                    <a href="{{ path('admin_formulation_edit', {'id': formulation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_formulation_new') }}">Create new</a>
+{% endblock %}

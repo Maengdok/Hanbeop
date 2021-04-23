@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grammar index{% endblock %}
+
+{% block body %}
+    <h1>Grammar index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for grammar in grammars %}
+            <tr>
+                <td>{{ grammar.id }}</td>
+                <td>{{ grammar.title }}</td>
+                <td>
+                    <a href="{{ path('admin_grammar_show', {'id': grammar.id}) }}">show</a>
+                    <a href="{{ path('admin_grammar_edit', {'id': grammar.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_grammar_new') }}">Create new</a>
+{% endblock %}

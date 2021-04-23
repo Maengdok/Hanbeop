@@ -1,0 +1,86 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/Grammars/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <div>
+            <a href="{{ path('index') }}"><i class="fas fa-home"></i> Home</a> > Grammaire
+        </div>
+    </div>
+    <div class="grammar-page">
+        <div class="grammar-section">
+            <div class="title-path">
+                <div class="head-title">
+                    <h1>Grammaire</h1>
+                </div>
+            </div>
+            <span class="separator"></span>
+            {% include "includes/grammar/_grammarSearch.html.twig" %}
+            <div class="letter-filter">
+                <div class="letters kr">
+                    {% for letter in letters %}
+                        <div class="letter">
+                            <a href="{{ path('search_gLetter', {id: letter.id}) }}">{{ letter.symbol }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="grammar-categories-section">
+                <div class="classification-section">
+                    <div class="classification-section-title">
+                        <h3>Par classifications</h3>
+                    </div>
+                    {% for level in levels %} 
+                        <div class="grammar-classification">
+                            <div class="category-title">
+                                <h4><a href="{{ path('search_gLevel', {id: level.id}) }}">{{ level.name }}</a></h4>
+                                <div class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></div>
+                            </div>
+                            <div class="categories-separator"></div>
+                            <div class="classification">
+                                {% for category in categories %}
+                                    <div class="classification-title">
+                                        <h5><a href="{{ path('search_gCategory', {id: category.id})}}">{{ category.name }}</a></h5>
+                                    </div>
+                                        
+                                    <div class="classification-body kr">
+                                    {% for grammar in grammars %}
+                                        {% if grammar.category.name == category.name and grammar.level.name == level.name %}
+                                            <a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="categories-section">
+                    <div class="categories-section-title">
+                        <h3>Par catégories</h3>
+                    </div>
+                    <div class="classification">
+                        {% for category in categories %}
+                            <div class="classification-title">
+                                <h5><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a></h5>
+                                <span class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></span>
+                            </div>
+                            <div class="classification-body kr">
+                                {% for grammar in grammars %} 
+                                    {% if grammar.category.name == category.name %}
+                                        <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

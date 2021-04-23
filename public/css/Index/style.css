@@ -1,0 +1,125 @@
+/***************/
+/**** index ****/
+/***************/
+
+.index-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.link-path a {
+    color: black;
+}
+
+.navbar-index {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    color: #D0D6D9;
+}
+
+.square {
+    border-radius: 20% 0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #590212d7; 
+    color: #D0D6D9;
+    font-family: alexa-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.square-icon {
+    font-size: 50px;
+}
+
+.square-text {
+    font-size: 30px;
+}
+
+.s-p-c {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+}
+
+.s-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.index-search-bar, .personnal-bar {
+    width: 100%;
+    height: 180px;
+}
+
+.index-search-bar {
+    background: #022859cc;
+}
+
+.personnal-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #035AA6;
+}
+
+.leaf {
+    width: 150px;
+    height: 150px;
+    border-radius: 50% 0;
+    background: #590212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #D0D6D9;
+    font-family: alexa-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.leaf:hover {
+    background: #730217;
+}
+
+.leaf-icon {
+    font-size: 30px;
+}
+
+.leaf-text {
+    font-size: 20px;
+}
+
+.carrousel {
+    width: 25%;
+    height: 100%;
+    background: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    width: 90%;
+    height: 90%;
+    background: white;
+}

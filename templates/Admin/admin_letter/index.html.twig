@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Letter index{% endblock %}
+
+{% block body %}
+    <h1>Letter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for letter in letters %}
+            <tr>
+                <td>{{ letter.id }}</td>
+                <td>{{ letter.name }}</td>
+                <td>{{ letter.symbol }}</td>
+                <td>
+                    <a href="{{ path('admin_letter_show', {'id': letter.id}) }}">show</a>
+                    <a href="{{ path('admin_letter_edit', {'id': letter.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_letter_new') }}">Create new</a>
+{% endblock %}

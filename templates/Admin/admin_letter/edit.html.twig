@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Letter{% endblock %}
+
+{% block body %}
+    <h1>Edit Letter</h1>
+
+    {{ include('Admin/admin_letter/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_letter_index') }}">back to list</a>
+
+    {{ include('Admin/admin_letter/_delete_form.html.twig') }}
+{% endblock %}

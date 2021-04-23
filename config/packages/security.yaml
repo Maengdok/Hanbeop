@@ -1,0 +1,77 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+        App\Entity\University:
+            algorithm: auto
+        App\Entity\Professor:
+            algorithm: auto
+        App\Entity\Student:
+            algorithm: auto
+        App\Entity\Admin:
+            algorithm: auto
+
+
+
+
+
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_admin_provider:
+            entity:
+                class: App\Entity\Admin
+                property: email
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            anonymous: lazy
+            provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: index
+            form_login:
+                login_path: app_login
+                check_path: app_login
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    role_hierarchy: 
+        ROLE_PREMIUM:       [ROLE_USER]
+        ROLE_STUDENT:       [ROLE_PREMIUM]
+        ROLE_PROFESSOR:     [ROLE_PROFESSOR]
+        ROLE_UNIVERSITY:    [ROLE_UNIVERSITY]
+        ROLE_ADMIN:         [ROLE_PREMIUM]
+        ROLE_SUPER_ADMIN:   [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profil, roles: [ROLE_USER, ROLE_UNIVERSITY] }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/grammaire, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/exercices, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/documentation, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/aboutUs, roles: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -1,0 +1,55 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="first-nav">
+        <span class="logged-user">
+                Bonjour, <strong id="logged-user">{{ app.user.pseudo }}</strong> !
+        </span>
+        <div class="connection">
+            {# {% if is_granted('ROLE_ADMIN') %}
+                <span class="admin-link"><a href="{{ path('admin') }}">Admin</a></span>
+            {% endif %} #}
+            <span class="profil-link"><a href="{{ path('profile') }}">Mon profil</a></span>
+            <span class="logout-link"><a href="{{ path('app_logout') }}">Se déconnecter</a></span>
+        </div>
+    </div>
+    {% else %}
+        <div class="first-nav">
+            <span class="logged-user">
+                    Bonjour !
+            </span>
+            <div class="connection">
+                <span class="signin-link"><a href="{{ path('app_register') }}">S'inscrire</a></span>
+                <span class="login-link"><a href="{{ path('app_login') }}">Se connecter</a></span>
+        </div>
+    </div>
+{% endif %}
+
+<div class="second-nav">
+    <div class="logo">
+        <a class="logo-link" href="{{ path('index') }}">
+            <img src="{{ asset('img/hanbeop-logo-color.png') }}" alt="Hanbeop logo">
+            <div class="logo-name">
+                <div class="hanbeop">Hanbeop</div>
+                <div class="hanbeop-kr kr">한법 - 불한문법</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="navbar">
+        <ul class="navbar-ul">
+            <li class="nav-li">
+                <a class="nav-link" href="{{ path('grammar') }}">Grammaire</a>
+            </li>
+            <li class="nav-li">
+                <a class="nav-link" href="{{ path('exercices') }}">Exercices</a>
+            </li>
+            <li class="nav-li">
+                <a class="nav-link" href="{{ path('documentation') }}">Documentation</a>
+            </li>
+            <li class="nav-li">
+                <a class="nav-link" href="{{ path('about') }}">A Propos</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ADD JS FOR THE NAVBAR WHEN HOVERED -->
+</div>

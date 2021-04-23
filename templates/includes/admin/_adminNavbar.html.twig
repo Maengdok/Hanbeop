@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ path('index') }}">Hanbeop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_grammars') }}">Grammaire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_exercices') }}">Exercices</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_quizzes') }}">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_roles') }}">Rôles Quizz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_categories') }}">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_classifications') }}">Classifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_users') }}">Utilisateurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('list_profs') }}">Professeurs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ajouter
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ path('add_user') }}">Ajouter Utilisateur</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_grammar') }}">Ajouter Grammaire</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_exercice') }}">Ajouter Exercice</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_quizz') }}">Ajouter Quizz</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_role') }}">Ajouter Rôle Quizz</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_category') }}">Ajouter Catégorie</a></li>
+            <li><a class="dropdown-item" href="{{ path('add_classification') }}">Ajouter Classification</a></li>
+            <li><a class="dropdown-item" href="#">Ajouter Professeur</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

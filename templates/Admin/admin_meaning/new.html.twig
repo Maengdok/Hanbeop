@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Meaning{% endblock %}
+
+{% block body %}
+    <h1>Create new Meaning</h1>
+
+    {{ include('Admin/admin_meaning/_form.html.twig') }}
+
+    <a href="{{ path('admin_meaning_index') }}">back to list</a>
+{% endblock %}

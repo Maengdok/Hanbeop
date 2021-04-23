@@ -1,0 +1,88 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/DocuAndAbout/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > Documentation</span>
+    </div>
+    <div class="docu-page">
+        <div class="side-menus">
+            {% include "includes/docu/_docuMenu.html.twig" %}
+        </div>
+        <div class="docu-section">
+            <div class="title-path">
+                <div class="head-title">
+                    <h1>Documentation</h1>
+                </div>
+            </div>
+            <span class="separator"></span>
+            <div class="docu-parts">
+                <div class="docu-title">
+                    <h2>Hangeul</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="hangeul" id="hangeul">
+                    {% include "includes/docu/_hangeulTable.html.twig" %}
+                </div>
+                <div class="docu-title">
+                    <h2>Apprendre le coréen en ligne</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="e-learning" id="e-learning">
+                    {% include "includes/docu/_eLearning.html.twig" %}
+                </div>
+                <div class="docu-title">
+                    <h2>Apprendre le coréen à l'université</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="univ-list" id="univ-list">
+                    {% include "includes/docu/_univList.html.twig" %}
+                </div>
+                <div class="docu-title">
+                    <h2>Livres pour apprendre le coréen</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="books" id="books">
+                    {% include "includes/docu/_books.html.twig" %}
+                </div>
+                <div class="docu-title">
+                    <h2>En apprendre plus sur la culture coréenne</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="culture" id="culture">
+                    {% include "includes/docu/_culture.html.twig" %}
+                </div>
+                <div class="docu-title">
+                    <h2>En apprendre plus sur l'histoire coréenne</h2>
+                    <span class="see-more" onclick="">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="docu-separator"></div>
+                <div class="history" id="history">
+                    {% include "includes/docu/_history.html.twig" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

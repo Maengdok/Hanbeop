@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Meaning{% endblock %}
+
+{% block body %}
+    <h1>Edit Meaning</h1>
+
+    {{ include('Admin/admin_meaning/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_meaning_index') }}">back to list</a>
+
+    {{ include('Admin/admin_meaning/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,440 @@
+/***************/
+/** exercices **/
+/***************/
+
+.exercices-page {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+
+.exercices-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-path {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.separator {
+    width: 90%;
+    height: 1px;
+    background: rgb(133, 132, 132);
+    margin-bottom: 20px;
+}
+
+.exercices-search-bar {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.search-category {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.search-category select {
+    height: 35px;
+}
+
+.search-bar {
+    width: 90%;
+    margin: auto;
+    padding-left: 10px;
+}
+
+input[type="search"] {
+    width: 80%;
+}
+
+input[type="submit"] {
+    width: 120px;
+    height: 35px;
+    border: none;
+    font-weight: bold;
+    background: #590212;
+    color: white;  
+}
+
+.quick-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.qs-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.letter-filter {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.letters {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.letter {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20% 0;
+}
+
+.related-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.related-grammar {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.related-exercices {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.exercices-classification-section {
+    width: 80%;
+    height: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.classification-section, .created-section {
+    width: 45%;
+    background: #EEEEEE;
+}
+
+.classification-section-title, .created-section-title {
+    width: 100%;
+    background: #022859;
+    color: white;
+}
+
+.exercices-classification, .exercices-created {
+    width: 100%;
+}
+
+.created-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.created-title a {
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+.created-title-block a h4 {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.created-title-block strong {
+    font-size: 15px;
+}
+
+.created-title-block a p {
+    font-size: 12px;
+}
+
+.created-title-block {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.created-title-block a {
+    display: flex;
+    flex-direction: row;
+}
+
+.classification-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.categories-title {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.categories-body {
+    padding: 0 0 0 30px;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+.categories-body a {
+    display: flex;
+    flex-direction: row;
+}
+
+.categories-separator {
+    width: 90%;
+    height: 1px;
+    margin: 0 auto 10px auto;
+    background: #103668;
+}
+
+.diff-acc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.easy, .medium, .hard, .free, .premium {
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-size: 10px;
+}
+
+.easy {
+    border: 1px solid rgb(48, 128, 48);
+    color:rgb(48, 128, 48);
+}
+
+.medium {
+    border: 1px solid rgb(203, 143, 80);
+    color:rgb(203, 143, 80);
+}
+
+.hard {
+    border: 1px solid rgb(230, 85, 85);
+    color:rgb(230, 85, 85);
+}
+
+.free {
+    border: 1px solid black;
+}
+
+.premium {
+    border: 1px solid rgb(53, 53, 174);
+    color:rgb(53, 53, 174);
+}
+
+/**************/
+/** exercice **/
+/**************/
+
+.exercice-page {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+
+.exercice-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercice {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quizz-question h4 {
+    font-size: 30px;
+}
+
+.answer {
+    font-size: 20px;
+    padding: 10px 0 10px 20px; 
+    display: flex;
+    flex-direction: row;
+}
+
+.question-separator {
+    width: 80%;
+    height: 1px;
+    background: rgb(133, 132, 132);
+    margin-bottom: 20px;
+    display: flex;
+    margin: 0 auto 0 auto;
+}
+
+.question-answers {
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+.quizz-question {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    background: #022859;
+    color: white;
+}
+
+.quizz-answers {    
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.answer {
+    width: 90%;
+}
+
+.answer label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.answer-text, .user-answer-text {
+    width: 90%;
+    background: rgb(235, 234, 234);
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.quizz-separator {
+    width: 100%;
+    height: 1px;
+    background: rgb(133, 132, 132);
+    margin-bottom: 20px;
+}
+
+.premium-link {
+    width: 100%;
+    height: 100px;
+    margin: 50px 0 50px 0;
+    background: #4373b6af;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.premium-link a {
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.premium-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.premium-icon {
+    font-size: 50px;
+}
+
+.premium-card h4 {
+    margin-bottom: 20px;
+}
+
+.exo-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hidden-row {
+    display: none;
+}
+
+.answer-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #EEEEEE;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.answer-label a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.checked, .correct {
+    background: green;
+}
+
+.wrong {
+    background: red;
+}
+
+.valid-btn a button {
+    display: flex;
+    justify-content: center;
+}
+
+.user-answers {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px 0 10px 20px; 
+    margin: 20px auto;
+}
+
+.user-answer-text {
+    margin: 10px 0;
+    width: 90;
+}

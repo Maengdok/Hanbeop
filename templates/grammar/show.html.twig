@@ -1,0 +1,106 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/Grammars/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('grammar') }}">Grammaire</a> > {{ grammar.title }}</span>
+    </div>
+    <div class="grammar-detail-page">
+        <div class="grammar-detail-section">
+            <div class="title-path">
+                <div class="head-title">
+                    <div class="title-add">
+                        <h1>{{ grammar.title }}</h1> 
+                    </div>
+                </div>
+            </div>
+            <span class="separator"></span>
+            {% include "includes/grammar/_grammarSearch.html.twig" %}
+            <div class="grammar-notion">
+                <div class="notion">
+                    <div class="notion-head">
+                        <h2>Notion</h2>
+                        <div class="see-more" onclick="">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                    <div class="notion-body">
+                        <strong>{{ grammar.title }}</strong>
+                        <span class="category-tags">
+                            <a href="#">{{ grammar.category.name}}</a>
+                        </span>
+                        <span class="classification-tags">
+                            <a href="#">{{ grammar.level.name }}</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="meaning">
+                    <div class="notion-head">
+                        <h2>Signification et utilisation</h2>
+                        <div class="see-more" onclick="">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                    {% for elm in meaning %}
+                        {% if elm.grammar == grammar.title %}
+                            <p>{{ elm.content }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="exemples">
+                    <div class="notion-head">
+                        <h2>Exemples</h2>
+                        <div class="see-more" onclick="">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                    {% for elm in examples %}
+                        {% for mnng in meaning %}
+                            {% if elm.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
+                                <p>{{ elm.content | nl2br }}</p><br><br>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="formulation">
+                    <div class="notion-head">
+                        <h2>Formulation</h2>
+                        <div class="see-more" onclick="">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                        {% for formulation in formulations %}
+                            {% for mnng in meaning %}
+                                {% if formulation.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
+                                    {{ formulation.content | nl2br }}<br><br>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                </div>
+                <div class="exercices">
+                    <div class="notion-head">
+                        <h2>Exercices</h2>
+                        <div class="see-more" onclick="">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                    <p>
+                        {% for exercice in grammar.exercices %}
+                            <a href="{{ path('show_exercice', {id: exercice.id}) }}"><i class="fas fa-arrow-right"></i> {{ exercice.title }}</a><br>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

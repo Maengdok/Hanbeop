@@ -1,0 +1,85 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/Index/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <div><i class="fas fa-home"></i> Home</div>
+    </div>
+    <div class="index-content">
+        <div class="navbar-index">
+            <a href="{{ path('grammar' )}}">
+                <div class="square square1">
+                    <div class="square-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <span class="square-text">Grammaire</span>
+                </div>
+            </a>
+            <a href="{{ path('exercices') }}">
+                <div class="square square2">
+                    <div class="square-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <span class="square-text">Exercices</span>
+                </div>
+            </a>
+            <a href="{{ path('documentation') }}">
+                <div class="square square3">
+                    <div class="square-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <span class="square-text">Documentation</span>
+                </div>
+            </a>
+            <a href="{{ path('about') }}">
+                <div class="square square4">
+                    <div class="square-icon">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <span class="square-text">A Propos</span>
+                </div>
+            </a>
+        </div>
+        <div class="s-p-c">
+            <div class="s-p">
+                <div class="index-search-bar">
+                    <!-- MUST LOOK FOR SYMFONY SEARCH BAR -->
+                </div>
+                <div class="personnal-bar">
+                    <a href="#">
+                        <div class="leaf leaf1">
+                            <div class="leaf-icon">
+                                <i class="fas fa-address-card"></i>
+                            </div>
+                            <span class="leaf-text">Mon Profil</span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="leaf leaf2">
+                            <div class="leaf-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="leaf-text">Mes Favoris</span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="leaf leaf3">
+                            <div class="leaf-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <span class="leaf-text">Mes Exercices</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="carrousel">
+                <div class="slide">
+                    <!-- ADD JS FOR CARROUSEL -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

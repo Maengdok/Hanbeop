@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Grammar{% endblock %}
+
+{% block body %}
+    <h1>Create new Grammar</h1>
+
+    {{ include('Admin/admin_grammar/_form.html.twig') }}
+
+    <a href="{{ path('admin_grammar_index') }}">back to list</a>
+{% endblock %}

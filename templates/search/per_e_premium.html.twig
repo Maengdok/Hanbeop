@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/Search/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="link-path">
+        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('exercices') }}">Exercices</a> > Premium</span>
+    </div>
+    <div class="search-page">
+        {% if not is_granted("ROLE_PREMIUM") and not is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <div class="side-menus">
+                {% include "includes/exercices/_premiumMenu.html.twig" %}
+            </div>
+        {% endif %}
+        <div class="search-section">
+            <div class="title-path">
+                <div class="head-title">
+                    <h1>Premium</h1>
+                </div>
+            </div>
+            <span class="separator"></span>
+            <div class="exercices-classification-section">
+                <div class="classification-section">
+                    <div class="classification-section-title">
+                        <h3>Par grammaire</h3>
+                    </div>
+                    <div class="exercices-classification">
+                        <div class="categories">
+                            {% for grammar in grammars %}
+                                {% set nbIteration = 0 %}
+                                {% set nbRepetition = 1 %}
+                                {% for exercice in exercices %} 
+                                    {% set nbIteration = nbIteration + 1 %}
+                                    {% if (nbIteration / nbIteration) == 1  and nbRepetition  == 1 %}
+                                        {% if exercice.grammar.title == grammar.title and exercice.difficulty == 1%}
+                                            <div class="categories-title">
+                                                <h4><a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a></h4>
+                                                <span class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></span>
+                                            </div>
+                                            <div class="categories-separator"></div>
+                                            {% set nbRepetition = nbRepetition + 1 %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for exercice in exercices %}
+                                    {% if exercice.grammar.title == grammar.title and exercice.isPremium == true %}
+                                        <div class="categories-body kr">
+                                            <strong><a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.title }}</a></strong>&nbsp
+                                            <div class="diff-acc">
+                                                <div class="difficulty">
+                                                    {% if exercice.difficulty == 1 %}
+                                                        <a href="#"><span class="easy">Facile</span></a>
+                                                    {% elseif exercice.difficulty == 2 %}
+                                                        <a href="#"><span class="medium">Moyen</span></a>
+                                                    {% elseif exercice.difficulty == 3 %}
+                                                        <a href="#"><span class="hard">Difficile</span></a>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="access">
+                                                    {% if exercice.isPremium is same as true %}
+                                                        <a href="#"><span class="premium">Premium</span></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

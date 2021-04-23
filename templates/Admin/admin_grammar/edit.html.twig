@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Grammar{% endblock %}
+
+{% block body %}
+    <h1>Edit Grammar</h1>
+
+    {{ include('Admin/admin_grammar/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_grammar_index') }}">back to list</a>
+
+    {{ include('Admin/admin_grammar/_delete_form.html.twig') }}
+{% endblock %}

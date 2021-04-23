@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/SignAndLog/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="link-path">
+        <span><a href="{{ path('index') }}"><i class="fas fa-home"></i> Home</a> > S'inscrire</span>
+    </div>
+    <div class="sign-in">
+        <div class="sign-in-section">
+            <div class="title-path">
+                <div class="head-title">
+                    <h1>S'inscrire</h1>
+                </div>
+            </div>
+            <span class="separator"></span>
+            <div class="form-section">
+                <div id="user_form">
+                    {{ form_start(registrationForm) }}
+                        <div class="registration block">
+                            {{ form_row(registrationForm.pseudo, {
+                                label: 'Pseudo'
+                            }) }}
+                            {{ form_row(registrationForm.name, {
+                                label: 'Nom'
+                            }) }}
+                            {{ form_row(registrationForm.fname, {
+                                label: 'Prénom'
+                            }) }}
+                            {{ form_row(registrationForm.email, {
+                                label: 'Email'
+                            }) }}
+                            <div class="civility">
+                                {{ form_row(registrationForm.civility, {
+                                    label: 'Civilité'
+                                }) }}
+                            </div>
+                            <div class="birth-date">
+                                {{ form_row(registrationForm.birthDate, {
+                                    label: 'Date de naissance'
+                                }) }}
+                            </div>
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Mot de passe'
+                            }) }}                        
+                            <div class="terms">
+                                {{ form_row(registrationForm.agreeTerms, {
+                                    label: 'Accepter les termes'
+                                }) }}
+                            </div>
+                        </div>
+                        <!-- ADD AN EMAIL VALIDATOR FOR USER -->
+                        <div class="valid-btn">
+                            <button type="submit" class="btn valid-btn">S'enregistrer</button>
+                        </div>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
