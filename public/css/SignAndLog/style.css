@@ -28,13 +28,6 @@
     flex-direction: column;
 }
 
-.role_choice {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 20px;
-}
-
 .registration input[type="text"], .registration input[type="password"] {
     display: flex;
     flex-direction: column;

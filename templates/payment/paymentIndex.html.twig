@@ -11,8 +11,8 @@
         </div>
         <div class="subscription-body">
             <div class="subscription-time">
-                <h4>Durée</h4>
-                <p>1 mois</p>
+                <h4>Durée et prix</h4>
+                <p>1 mois pour 1,99€</p>
             </div>
             <div class="subscription-offer">
                 <h4>Avantages</h4>
@@ -20,13 +20,23 @@
                     <li>Accès à tous les exercices Premium</li>
                 <ul>
             </div>
-            <div class="valid-btn">
-                <a href="{{ path('payment') }}">
-                    <label for="valid-btn">
-                        <input type="button" class="valid-btn" value="S'abonner">
-                    </label>
-                </a>
-            </div>
+            {% if is_granted('ROLE_USER') %}
+                <div class="valid-btn">
+                    <a href="{{ path('payment') }}">
+                        <label for="valid-btn">
+                            <input type="button" class="valid-btn" value="S'abonner">
+                        </label>
+                    </a>
+                </div>
+            {% elseif not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="valid-btn">
+                    <a href="{{ path('app_login') }}">
+                        <label for="valid-btn">
+                            <input type="button" class="valid-btn" value="Se connecter">
+                        </label>
+                    </a>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

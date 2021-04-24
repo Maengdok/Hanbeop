@@ -75,3 +75,4 @@ security:
         - { path: ^/exercices, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/documentation, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/aboutUs, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/payment, roles: ROLE_USER }

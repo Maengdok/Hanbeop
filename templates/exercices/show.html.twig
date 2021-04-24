@@ -10,7 +10,7 @@
         <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('exercices') }}">Exercices</a> > {{ exercice.title }}</span>
     </div>
     <div class="exercice-page">
-        {% if not is_granted("ROLE_PREMIUM") and not is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+        {% if not is_granted("ROLE_PREMIUM") and is_granted("ROLE_USER") %}
             <div class="side-menus">
                 {% include "includes/exercices/_premiumMenu.html.twig" %}
             </div>
@@ -19,7 +19,32 @@
             <div class="title-path">
                 <div class="head-title">
                     <h1>{{ exercice.title }}</h1>
-                        <p><span>{{ exercice.difficulty }}</span> <span>{{ exercice.isPremium }}</p>
+                        <div class="head-title-details">
+                            <p>
+                                {% if exercice.difficulty == 1 %}
+                                    <a href="{{ path('search_eEasy') }}">
+                                        <span class="easy">Facile</span>
+                                    </a>
+                                {% elseif exercice.difficulty == 2 %}
+                                    <a href="{{ path('search_eMedium') }}">
+                                        <span class="medium">Moyen</span>
+                                    </a>
+                                {% elseif exercice.difficulty == 3 %}
+                                    <a href="{{ path('search_eHard') }}">
+                                        <span class="hard">Difficile</span>
+                                    </a>
+                                {% endif %}
+                                {% if exercice.isPremium == false %}
+                                    <a href="{{ path('search_eFree') }}">
+                                        <span class="free">Gratuit</span>
+                                    </a>
+                                {% elseif exercice.isPremium == true %}
+                                    <a href="{{ path('search_ePremium') }}">
+                                        <span class="premium">Premium</span>
+                                    </a>
+                                {% endif %}
+                            </p>
+                        </div>
                 </div>
             </div>
             <span class="separator"></span>
@@ -77,19 +102,33 @@
                                             {% set nbI = nbI + 1 %}
                                         {% endif %}
                                     {% endfor %}
+                                   {% set i = i + 1 %}
                                 {% endif %}
-                                {% set i = i + 1 %}
                             {% endfor %}
                         {% endfor %}
                     {% endif %}
                 </div>
             </form>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <div class="valid-btn">
-                    <a href="{{ path('show_answer', {id: exercice.id}) }}">
-                        <button type="button">Valider</button>
-                    </a>
-                </div>
+                {% if exercice.isPremium == false %}
+                    <div class="valid-btn">
+                        <a href="{{ path('show_answer', {id: exercice.id}) }}">
+                            <button type="button">Valider</button>
+                        </a>
+                    </div>
+                {% elseif exercice.isPremium == true and is_granted("ROLE_PREMIUM") %}
+                    <div class="valid-btn">
+                        <a href="{{ path('show_answer', {id: exercice.id}) }}">
+                            <button type="button">Valider</button>
+                        </a>
+                    </div>
+                {% elseif exercice.isPremium == true and not is_granted("ROLE_PREMIUM") %}
+                    <div class="valid-btn">
+                        <a href="{{ path('payment_index') }}">
+                            <button type="button">Devenir Premium</button>
+                        </a>
+                    </div>
+                {% endif %}
             {% else %}
                 <div class="valid-btn">
                     <a href="{{ path('app_login') }}">

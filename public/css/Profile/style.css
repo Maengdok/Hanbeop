@@ -100,3 +100,12 @@
 .favorites-body a {
     padding: 5px;
 }
+
+.premium {
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-size: 10px;
+    border: 1px solid rgb(53, 53, 174);
+    color:rgb(53, 53, 174);
+}

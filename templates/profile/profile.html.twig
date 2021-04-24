@@ -1,7 +1,6 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/Profile/style.css') }}">
 {% endblock %}
 
@@ -27,6 +26,9 @@
                 <div class="profile-parts">
                     <div class="profile-title">
                         <h2>Mes informations</h2>
+                        {% if is_granted("ROLE_PREMIUM") %}
+                            <span class="premium">Premium</span>
+                        {% endif %}
                     </div>
                     <div class="profile-separator"></div>
                     <div class="informations">
