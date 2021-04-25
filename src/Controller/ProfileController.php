@@ -50,6 +50,43 @@
                 'formUser' => $formUser->createView()
             ]);
         }
+
+        /**
+         * @Route("/profil/resilier", name="profile_cancel")
+         */
+        public function cancel_subscription(\Swift_Mailer $mailer) {
+            $contactMessage = (new \Swift_Message('Résiliation abonnement'))
+            ->setFrom($this->getUser()->getEmail())
+            ->setTo('axel.pion@maengdok.fr')
+            ->setBody('Demande de résiliation d\'abonnement de l\'email suivant:'.PHP_EOL.$this->getUser()->getEmail().'.');
+            $mailer->send($contactMessage);
+            
+            $this->addFlash('cancel_success', 'Votre demande de résiliation a bien été envoyée et sera traitée dans les plus brefs delais.');
+
+            return $this->redirectToRoute('profile');
+        }
+
+        /**
+         * @Route("/profil/supprimer", name="profile_delete")
+         */
+        public function delete_account() {
+            $user = $this->getUser();
+            $em = $this->getDoctrine()->getManager();
+            
+            if ($answers = $this->getUser()->getUserAnswers()) {
+    
+                foreach ($answers as $answer) {
+                    $delAnswers = $this->getUser()->removeUserAnswer($answer);
+                    $em->remove($delAnswers);
+                }
+            }
+
+            $this->get('security.token_storage')->setToken(null);
+            $em->remove($user);
+            $em->flush();
+
+            return $this->redirectToRoute('index');
+        }
     }
 
 ?>

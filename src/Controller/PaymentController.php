@@ -100,19 +100,4 @@ class PaymentController extends AbstractController
 
         return $this->render('payment/failure.html.twig');
     }
-
-//     /**
-//      * @Route("/payment/cancel-subscription", name="payment_cancel")
-//      */
-//     public function cancel() {
-//         \Stripe\Stripe::setApiKey('sk_test_51IgovzJufIouFh4tHbgJ17OG69qAxG5vFbPkVrJdPwAlesRNNiReIEy1C8han1dQV5hFq1RyOMFv41WN0XWdGKTp00PvA4P7XH');
-
-//         $user = $this->getDoctrine()->getRepository(User::class)->findAll();
-//         $user = $this->getUser();
-
-//         $subscription = \Stripe\Subscription::retrieve($user);
-//         $subscription->cancel();
-
-//         return $this->render('payment/cancel.html.twig');
-//     }
 }

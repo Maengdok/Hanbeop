@@ -23,6 +23,11 @@
                     </div>
                 </div>
                 <span class="separator"></span>
+                <div class="app_flashes">
+                    {% for message in app.flashes('cancel_success') %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
                 <div class="profile-parts">
                     <div class="profile-title">
                         <h2>Mes informations</h2>
@@ -74,6 +79,16 @@
                                 <button type="submit" class="btn valid-btn">S'enregistrer</button>
                             </div>
                         {{ form_end(formUser) }}
+                    </div>
+                    <div class="cancel_delete">
+                        {% if is_granted('ROLE_PREMIUM') %}
+                            <a href="{{ path('profile_cancel') }}">
+                                <span>Résilier l'abonnement</a>
+                            </a>
+                        {% endif %}
+                        <a href="{{ path('profile_delete') }}">
+                            <span class="delete">Supprimer le profil</span>
+                        </a>
                     </div>
                 </div>
             </div>
