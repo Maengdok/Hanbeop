@@ -24,59 +24,48 @@
                 <div class="notion">
                     <div class="notion-head">
                         <h2>Notion</h2>
-                        <div class="see-more" onclick="">
+                        <div class="see-more" onclick="seeMore('notion-block')">
                             Voir plus <i class="fas fa-sort-down"></i>
                         </div>
                     </div>
                     <div class="notion-separator"></div>
-                    <div class="notion-body">
-                        <strong>{{ grammar.title }}</strong>
-                        <span class="category-tags">
-                            <a href="#">{{ grammar.category.name}}</a>
-                        </span>
-                        <span class="classification-tags">
-                            <a href="#">{{ grammar.level.name }}</a>
-                        </span>
+                    <div id ="notion-block" style="display:none;">
+                        <div class="notion-body">
+                            <strong>{{ grammar.title }}</strong>
+                            <span class="category-tags">
+                                <a href="{{ path('search_gCategory', {id: grammar.category.id}) }}">{{ grammar.category.name}}</a>
+                            </span>
+                            <span class="classification-tags">
+                                <a href="{{ path('search_gLevel', {id: grammar.level.id}) }}">{{ grammar.level.name }}</a>
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <div class="meaning">
                     <div class="notion-head">
                         <h2>Signification et utilisation</h2>
-                        <div class="see-more" onclick="">
+                        <div class="see-more" onclick="seeMore('meaning-block')">
                             Voir plus <i class="fas fa-sort-down"></i>
                         </div>
                     </div>
                     <div class="notion-separator"></div>
-                    {% for elm in meaning %}
-                        {% if elm.grammar == grammar.title %}
-                            <p>{{ elm.content }}</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="exemples">
-                    <div class="notion-head">
-                        <h2>Exemples</h2>
-                        <div class="see-more" onclick="">
-                            Voir plus <i class="fas fa-sort-down"></i>
-                        </div>
-                    </div>
-                    <div class="notion-separator"></div>
-                    {% for elm in examples %}
-                        {% for mnng in meaning %}
-                            {% if elm.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
-                                <p>{{ elm.content | nl2br }}</p><br><br>
+                    <div id="meaning-block" style="display:none">
+                        {% for elm in meaning %}
+                            {% if elm.grammar == grammar.title %}
+                                <p>{{ elm.content }}</p>
                             {% endif %}
                         {% endfor %}
-                    {% endfor %}
+                    </div>
                 </div>
                 <div class="formulation">
                     <div class="notion-head">
                         <h2>Formulation</h2>
-                        <div class="see-more" onclick="">
+                        <div class="see-more" onclick="seeMore('formulation-block')">
                             Voir plus <i class="fas fa-sort-down"></i>
                         </div>
                     </div>
                     <div class="notion-separator"></div>
+                    <div id ="formulation-block" style="display:none;">
                         {% for formulation in formulations %}
                             {% for mnng in meaning %}
                                 {% if formulation.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
@@ -84,19 +73,40 @@
                                 {% endif %}
                             {% endfor %}
                         {% endfor %}
+                    </div>
+                </div>
+                <div class="exemples">
+                    <div class="notion-head">
+                        <h2>Exemples</h2>
+                        <div class="see-more" onclick="seeMore('exemples-block')">
+                            Voir plus <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                    <div class="notion-separator"></div>
+                    <div id ="exemples-block" style="display:none;">
+                        {% for elm in examples %}
+                            {% for mnng in meaning %}
+                                {% if elm.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
+                                    <p>{{ elm.content | nl2br }}</p><br><br>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="exercices">
                     <div class="notion-head">
                         <h2>Exercices</h2>
-                        <div class="see-more" onclick="">
+                        <div class="see-more" onclick="seeMore('exercices-block')">
                             Voir plus <i class="fas fa-sort-down"></i>
                         </div>
                     </div>
                     <div class="notion-separator"></div>
                     <p>
+                    <div id ="exercices-block" style="display:none;">
                         {% for exercice in grammar.exercices %}
                             <a href="{{ path('show_exercice', {id: exercice.id}) }}"><i class="fas fa-arrow-right"></i> {{ exercice.title }}</a><br>
                         {% endfor %}
+                    </div>
                     </p>
                 </div>
             </div>

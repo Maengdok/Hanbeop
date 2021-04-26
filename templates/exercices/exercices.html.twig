@@ -36,7 +36,6 @@
                 <div class="classification-section">
                     <div class="classification-section-title">
                         <h3>Par grammaire</h3>
-                        ah
                     </div>
                         <div class="exercices-classification">
                             <div class="categories">
@@ -49,38 +48,40 @@
                                             {% if exercice.grammar.title == grammar.title %}
                                                 <div class="categories-title">
                                                     <h4><a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ exercice.grammar.title }}</a></h4>
-                                                    <span class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></span>
+                                                    <span class="see-more" onclick="seeMore('{{ grammar.title }}')">Voir plus <i class="fas fa-sort-down"></i></span>
                                                 </div>
                                                 <div class="categories-separator"></div>
                                                 {% set nbRepetition = nbRepetition + 1 %}
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
-                                    {% for exercice in exercices %}
-                                        {% if exercice.grammar.title == grammar.title %}
-                                            <div class="categories-body kr">
-                                                <strong><a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.title }}</a></strong>&nbsp
-                                                <div class="diff-acc">
-                                                    <div class="difficulty">
-                                                        {% if exercice.difficulty == 1 %}
-                                                            <a href="{{ path('search_eEasy') }}"><span class="easy">Facile</span></a>
-                                                        {% elseif exercice.difficulty == 2 %}
-                                                            <a href="{{ path('search_eMedium') }}"><span class="medium">Moyen</span></a>
-                                                        {% elseif exercice.difficulty == 3 %}
-                                                            <a href="{{ path('search_eHard') }}"><span class="hard">Difficile</span></a>
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="access">
-                                                        {% if exercice.isPremium == false %}
-                                                            <a href="{{ path('search_eFree') }}"><span class="free">Gratuit</span></a>
-                                                        {% else %}
-                                                            <a href="{{ path('search_ePremium') }}"><span class="premium">Premium</span></a>
-                                                        {% endif %}
+                                    <div id="{{ grammar.title }}" style="display:none;">
+                                        {% for exercice in exercices %}
+                                            {% if exercice.grammar.title == grammar.title %}
+                                                <div class="categories-body kr">
+                                                    <strong><a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.title }}</a></strong>&nbsp
+                                                    <div class="diff-acc">
+                                                        <div class="difficulty">
+                                                            {% if exercice.difficulty == 1 %}
+                                                                <a href="{{ path('search_eEasy') }}"><span class="easy">Facile</span></a>
+                                                            {% elseif exercice.difficulty == 2 %}
+                                                                <a href="{{ path('search_eMedium') }}"><span class="medium">Moyen</span></a>
+                                                            {% elseif exercice.difficulty == 3 %}
+                                                                <a href="{{ path('search_eHard') }}"><span class="hard">Difficile</span></a>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="access">
+                                                            {% if exercice.isPremium == false %}
+                                                                <a href="{{ path('search_eFree') }}"><span class="free">Gratuit</span></a>
+                                                            {% else %}
+                                                                <a href="{{ path('search_ePremium') }}"><span class="premium">Premium</span></a>
+                                                            {% endif %}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        {% endif %}
-                                    {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -105,18 +106,18 @@
                                         <div class="diff-acc">
                                             <div class="difficulty">
                                                 {% if exercice.difficulty == 1 %}
-                                                    <a href="#"><span class="easy">Facile</span></a>
+                                                    <a href="{{ path('search_eEasy') }}"><span class="easy">Facile</span></a>
                                                     {% elseif exercice.difficulty == 2 %}
-                                                        <a href="#"><span class="medium">Moyen</span></a>
+                                                        <a href="{{ path('search_eMedium') }}"><span class="medium">Moyen</span></a>
                                                     {% elseif exercice.difficulty == 3 %}
-                                                        <a href="#"><span class="hard">Difficile</span></a>
+                                                        <a href="{{ path('search_eHard') }}"><span class="hard">Difficile</span></a>
                                                 {% endif %}
                                             </div>
                                             <div class="access">
                                                 {% if exercice.isPremium == false %}
-                                                    <a href="#"><span class="free">Gratuit</span></a>
+                                                    <a href="{{ path('search_eFree') }}"><span class="free">Gratuit</span></a>
                                                     {% else %}
-                                                        <a href="#"><span class="premium">Premium</span></a>
+                                                        <a href="{{ path('search_ePremium') }}"><span class="premium">Premium</span></a>
                                                 {% endif %}
                                             </div>
                                         </div>

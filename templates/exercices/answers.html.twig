@@ -19,7 +19,32 @@
             <div class="title-path">
                 <div class="head-title">
                     <h1>{{ exercice.title }}</h1>
-                        <p><span>{{ exercice.difficulty }}</span> <span>{{ exercice.isPremium }}</p>
+                    <div class="head-title-details">
+                        <p>
+                            {% if exercice.difficulty == 1 %}
+                                <a href="{{ path('search_eEasy') }}">
+                                    <span class="easy">Facile</span>
+                                </a>
+                            {% elseif exercice.difficulty == 2 %}
+                                <a href="{{ path('search_eMedium') }}">
+                                    <span class="medium">Moyen</span>
+                                </a>
+                            {% elseif exercice.difficulty == 3 %}
+                                <a href="{{ path('search_eHard') }}">
+                                    <span class="hard">Difficile</span>
+                                </a>
+                            {% endif %}
+                            {% if exercice.isPremium == false %}
+                                <a href="{{ path('search_eFree') }}">
+                                    <span class="free">Gratuit</span>
+                                </a>
+                            {% elseif exercice.isPremium == true %}
+                                <a href="{{ path('search_ePremium') }}">
+                                    <span class="premium">Premium</span>
+                                </a>
+                            {% endif %}
+                        </p>
+                    </div>
                 </div>
             </div>
             <span class="separator"></span>
@@ -64,13 +89,13 @@
                         {% for answer in answers %}
                             {% if answer.question.exercice.id == question.exercice.id and question.exercice.id == exercice.id %}
                                 {% for userAnswer in userAnswers %}
-                                    {% if userAnswer.answer.content == answer.content and nbI <= i %}
+                                    {% if userAnswer.answer.content == answer.content and userAnswer.user != null and nbI <= i %}
                                         <div class="user-answer-text">{{ answer.content }}</div>
                                         {% set nbI = nbI + 1 %}
                                     {% endif %}
                                 {% endfor %}
-                            {% endif %}
                             {% set i = i + 1 %}
+                            {% endif %}
                         {% endfor %}
                     {% endfor %}
                 </div>

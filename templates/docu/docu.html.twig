@@ -23,63 +23,75 @@
             <div class="docu-parts">
                 <div class="docu-title">
                     <h2>Hangeul</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('hangeul')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="hangeul" id="hangeul">
-                    {% include "includes/docu/_hangeulTable.html.twig" %}
+                <div id="hangeul" style="display:none">
+                    <div class="hangeul">
+                        {% include "includes/docu/_hangeulTable.html.twig" %}
+                    </div>
                 </div>
                 <div class="docu-title">
                     <h2>Apprendre le coréen en ligne</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('learning')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="e-learning" id="e-learning">
-                    {% include "includes/docu/_eLearning.html.twig" %}
+                <div id="learning" style="display:none">
+                    <div class="e-learning">
+                        {% include "includes/docu/_eLearning.html.twig" %}
+                    </div>
                 </div>
                 <div class="docu-title">
                     <h2>Apprendre le coréen à l'université</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('univ')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="univ-list" id="univ-list">
-                    {% include "includes/docu/_univList.html.twig" %}
+                <div id="univ" style="display:none">
+                    <div class="univ-list">
+                        {% include "includes/docu/_univList.html.twig" %}
+                    </div>
                 </div>
                 <div class="docu-title">
                     <h2>Livres pour apprendre le coréen</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('books')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="books" id="books">
-                    {% include "includes/docu/_books.html.twig" %}
+                <div id="books" style="display:none">
+                    <div class="books">
+                        {% include "includes/docu/_books.html.twig" %}
+                    </div>
                 </div>
                 <div class="docu-title">
                     <h2>En apprendre plus sur la culture coréenne</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('culture')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="culture" id="culture">
-                    {% include "includes/docu/_culture.html.twig" %}
+                <div id="culture" style="display:none">
+                    <div class="culture">
+                        {% include "includes/docu/_culture.html.twig" %}
+                    </div>
                 </div>
                 <div class="docu-title">
                     <h2>En apprendre plus sur l'histoire coréenne</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('history')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="docu-separator"></div>
-                <div class="history" id="history">
-                    {% include "includes/docu/_history.html.twig" %}
+                <div id="history" style="display:none">
+                    <div class="history">
+                        {% include "includes/docu/_history.html.twig" %}
+                    </div>
                 </div>
             </div>
         </div>

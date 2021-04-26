@@ -19,32 +19,32 @@
             <div class="title-path">
                 <div class="head-title">
                     <h1>{{ exercice.title }}</h1>
-                        <div class="head-title-details">
-                            <p>
-                                {% if exercice.difficulty == 1 %}
-                                    <a href="{{ path('search_eEasy') }}">
-                                        <span class="easy">Facile</span>
-                                    </a>
-                                {% elseif exercice.difficulty == 2 %}
-                                    <a href="{{ path('search_eMedium') }}">
-                                        <span class="medium">Moyen</span>
-                                    </a>
-                                {% elseif exercice.difficulty == 3 %}
-                                    <a href="{{ path('search_eHard') }}">
-                                        <span class="hard">Difficile</span>
-                                    </a>
-                                {% endif %}
-                                {% if exercice.isPremium == false %}
-                                    <a href="{{ path('search_eFree') }}">
-                                        <span class="free">Gratuit</span>
-                                    </a>
-                                {% elseif exercice.isPremium == true %}
-                                    <a href="{{ path('search_ePremium') }}">
-                                        <span class="premium">Premium</span>
-                                    </a>
-                                {% endif %}
-                            </p>
-                        </div>
+                    <div class="head-title-details">
+                        <p>
+                            {% if exercice.difficulty == 1 %}
+                                <a href="{{ path('search_eEasy') }}">
+                                    <span class="easy">Facile</span>
+                                </a>
+                            {% elseif exercice.difficulty == 2 %}
+                                <a href="{{ path('search_eMedium') }}">
+                                    <span class="medium">Moyen</span>
+                                </a>
+                            {% elseif exercice.difficulty == 3 %}
+                                <a href="{{ path('search_eHard') }}">
+                                    <span class="hard">Difficile</span>
+                                </a>
+                            {% endif %}
+                            {% if exercice.isPremium == false %}
+                                <a href="{{ path('search_eFree') }}">
+                                    <span class="free">Gratuit</span>
+                                </a>
+                            {% elseif exercice.isPremium == true %}
+                                <a href="{{ path('search_ePremium') }}">
+                                    <span class="premium">Premium</span>
+                                </a>
+                            {% endif %}
+                        </p>
+                    </div>
                 </div>
             </div>
             <span class="separator"></span>

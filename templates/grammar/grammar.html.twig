@@ -38,23 +38,25 @@
                         <div class="grammar-classification">
                             <div class="category-title">
                                 <h4><a href="{{ path('search_gLevel', {id: level.id}) }}">{{ level.name }}</a></h4>
-                                <div class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></div>
+                                <div class="see-more" onclick="seeMore('{{ level }}')">Voir plus <i class="fas fa-sort-down"></i></div>
                             </div>
                             <div class="categories-separator"></div>
-                            <div class="classification">
-                                {% for category in categories %}
-                                    <div class="classification-title">
-                                        <h5><a href="{{ path('search_gCategory', {id: category.id})}}">{{ category.name }}</a></h5>
-                                    </div>
-                                        
-                                    <div class="classification-body kr">
-                                    {% for grammar in grammars %}
-                                        {% if grammar.category.name == category.name and grammar.level.name == level.name %}
-                                            <a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a>
-                                        {% endif %}
+                            <div id="{{ level }}" style="display:none;">
+                                <div class="classification" id="{{ level }}">
+                                    {% for category in categories %}
+                                        <div class="classification-title">
+                                            <h5><a href="{{ path('search_gCategory', {id: category.id})}}">{{ category.name }}</a></h5>
+                                        </div>
+                                            
+                                        <div class="classification-body kr">
+                                        {% for grammar in grammars %}
+                                            {% if grammar.category.name == category.name and grammar.level.name == level.name %}
+                                                <a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                        </div>
                                     {% endfor %}
-                                    </div>
-                                {% endfor %}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -67,14 +69,16 @@
                         {% for category in categories %}
                             <div class="classification-title">
                                 <h5><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a></h5>
-                                <span class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></span>
+                                <span class="see-more" onclick="seeMore('{{ category }}')">Voir plus <i class="fas fa-sort-down"></i></span>
                             </div>
-                            <div class="classification-body kr">
-                                {% for grammar in grammars %} 
-                                    {% if grammar.category.name == category.name %}
-                                        <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }}</a>
-                                    {% endif %}
-                                {% endfor %}
+                            <div id="{{ category }}" style="display:none">
+                                <div class="classification-body kr">
+                                    {% for grammar in grammars %} 
+                                        {% if grammar.category.name == category.name %}
+                                            <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             </div>
                         {% endfor %}
                     </div>

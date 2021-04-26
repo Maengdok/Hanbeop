@@ -23,53 +23,51 @@
             <div class="about-parts">
                 <div class="about-title">
                     <h2>Qui sommes-nous ?</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('who')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="about-separator"></div>
-                <div class="who" id="who">
-                    {% include "includes/about/_who.html.twig" %}
+                <div id="who" style="display:none">
+                    <div class="who">
+                            {% include "includes/about/_who.html.twig" %}
+                    </div>
                 </div>
                 <div class="about-title">
                     <h2>Quel est notre but ?</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('goal')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="about-separator"></div>
-                <div class="our-goal" id="our-goal">
-                    {% include "includes/about/_ourGoal.html.twig" %}
+                <div id="goal" style="display:none">
+                    <div class="our-goal">
+                            {% include "includes/about/_ourGoal.html.twig" %}
+                    </div>
                 </div>
                 <div class="about-title">
                     <h2>Quels sont nos plans ?</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('plan')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="about-separator"></div>
-                <div class="our-plan" id="our-plan">
-                    {% include "includes/about/_ourPlan.html.twig" %}
+                <div id="plan" style="display:none">
+                    <div class="our-plan">
+                            {% include "includes/about/_ourPlan.html.twig" %}
+                    </div>
                 </div>
                 <div class="about-title">
                     <h2>Conditions d'utilisation</h2>
-                    <span class="see-more" onclick="">
+                    <span class="see-more" onclick="seeMore('terms')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="about-separator"></div>
-                <div class="terms-of-use" id="terms-of-use">
-                    {% include "includes/about/_termsOfUse.html.twig" %}
-                </div>
-                <div class="about-title">
-                    <h2>Nous contacter</h2>
-                    <span class="see-more" onclick="">
-                        Voir plus <i class="fas fa-sort-down"></i>
-                    </span>
-                </div>
-                <div class="about-separator"></div>
-                <div class="contact" id="contact">
-                    {% include "includes/about/_contact.html.twig" %}
+                <div id="terms" style="display:none">
+                    <div class="terms-of-use">
+                            {% include "includes/about/_termsOfUse.html.twig" %}
+                    </div>
                 </div>
             </div>
         </div>

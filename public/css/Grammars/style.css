@@ -196,12 +196,14 @@
 }
 
 .classification-tags, .category-tags {
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    /* width: 15%; */
+    padding: 2px 5px;
     margin: 0 10px;
+    font-size: 12px;
 }
 
 .classification-tags {
@@ -240,3 +242,4 @@
 .favorites-footer {
     padding-left: 10px;
 }
+

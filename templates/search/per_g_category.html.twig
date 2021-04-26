@@ -26,16 +26,18 @@
                         <div class="grammar-classification">
                             <div class="category-title">
                                 <h4><a href="{{ path('search_gLevel', {id: level.id}) }}">{{ level.name }}</a></h4>
-                                <div class="see-more" onclick="">Voir plus <i class="fas fa-sort-down"></i></div>
+                                <div class="see-more" onclick="seeMore('{{ level.name }}')">Voir plus <i class="fas fa-sort-down"></i></div>
                             </div>
                             <div class="categories-separator"></div>
                             <div class="classification">
-                                <div class="classification-body kr">
-                                {% for grammar in grammars %}
-                                    {% if grammar.category.name == category.name and grammar.level.name == level.name %}
-                                        <a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a>
-                                    {% endif %}
-                                {% endfor %}
+                                <div id="{{ level.name }}" style="display:none">
+                                    <div class="classification-body kr">
+                                    {% for grammar in grammars %}
+                                        {% if grammar.category.name == category.name and grammar.level.name == level.name %}
+                                            <a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ grammar.title }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
