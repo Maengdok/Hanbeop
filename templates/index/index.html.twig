@@ -9,76 +9,110 @@
         <div><i class="fas fa-home"></i> Home</div>
     </div>
     <div class="index-content">
-        <div class="navbar-index">
-            <a href="{{ path('grammar' )}}">
-                <div class="square square1">
-                    <div class="square-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <span class="square-text">Grammaire</span>
-                </div>
-            </a>
-            <a href="{{ path('exercices') }}">
-                <div class="square square2">
-                    <div class="square-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <span class="square-text">Exercices</span>
-                </div>
-            </a>
-            <a href="{{ path('documentation') }}">
-                <div class="square square3">
-                    <div class="square-icon">
-                        <i class="fas fa-folder-open"></i>
-                    </div>
-                    <span class="square-text">Documentation</span>
-                </div>
-            </a>
-            <a href="{{ path('about') }}">
-                <div class="square square4">
-                    <div class="square-icon">
-                        <i class="fas fa-address-card"></i>
-                    </div>
-                    <span class="square-text">A Propos</span>
-                </div>
-            </a>
-        </div>
-        <div class="s-p-c">
-            <div class="s-p">
-                <div class="index-search-bar">
-                    <!-- MUST LOOK FOR SYMFONY SEARCH BAR -->
-                </div>
-                <div class="personnal-bar">
-                    <a href="#">
-                        <div class="leaf leaf1">
-                            <div class="leaf-icon">
-                                <i class="fas fa-address-card"></i>
-                            </div>
-                            <span class="leaf-text">Mon Profil</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="leaf leaf2">
-                            <div class="leaf-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="leaf-text">Mes Favoris</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="leaf leaf3">
-                            <div class="leaf-icon">
-                                <i class="fas fa-language"></i>
-                            </div>
-                            <span class="leaf-text">Mes Exercices</span>
-                        </div>
-                    </a>
-                </div>
+        <div class="left-content">
+            <div class="top-left-content">
+                <h2 class="top-left-content-title">Bien débuter</h2>
+                {% set i = 0 %}
+                {% for grammar in grammars %}
+                    {% for level in levels %}
+                        {% if level.name == 'Débutant' %}
+                            {% if grammar.level.name == 'Débutant' and i <= 10 %}
+                                <span class="grammar">
+                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }} - 
+                                    {% for meaning in meanings %}
+                                        {% if meaning.grammar.id == grammar.id %}
+                                            {{ meaning.content }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% for category in categories %}
+                                        {% if grammar.category.id == category.id %}
+                                            <span class="category">{{ category.name }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </span>
+                                {% set i = i + 1 %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
             </div>
-            <div class="carrousel">
-                <div class="slide">
-                    <!-- ADD JS FOR CARROUSEL -->
-                </div>
+            <div class="bottom-left-content">
+                <h2 class="bottom-left-content-title">Bien s'améliorer</h2>
+                {% set i = 0 %}
+                {% for grammar in grammars %}
+                    {% for level in levels %}
+                        {% if level.name == 'Moyen' %}
+                            {% if grammar.level.name == 'Moyen' and i <= 10 %}
+                                <span class="grammar">
+                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }} - 
+                                    {% for meaning in meanings %}
+                                        {% if meaning.grammar.id == grammar.id %}
+                                            {{ meaning.content }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% for category in categories %}
+                                        {% if grammar.category.id == category.id %}
+                                            <span class="category">{{ category.name }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </span>
+                                {% set i = i + 1 %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="right-content-block">
+                <h2 class="right-content-block-title">Derniers exercices</h2>
+                {% set i = exercices|length %}
+                {% set n = i %}
+                {% for exercice in exercices %}
+                    <span class="exercice">
+                        {% if i < 20 and n >= 0 %}
+                            <a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.grammar.title }} - {{ exercice.title }} - {{ exercice.createdAt | date('d/m/Y') }}</a>
+                            <span class="difficulty-isPremium">
+                                {% if exercice.difficulty == 1 %}
+                                    <a class="easy" href="{{ path('search_eEasy') }}">Facile</a>
+                                {% endif %}
+                                {% if exercice.difficulty == 2 %}
+                                    <a class="medium" href="{{ path('search_eMedium') }}">Moyen</a>
+                                {% endif %}
+                                {% if exercice.difficulty == 3 %}
+                                    <a class="hard" href="{{ path('search_eHard') }}">Difficile</a>
+                                {% endif %}
+                                {% if exercice.isPremium == 0 %}
+                                    <a class="free" href="{{ path('search_eFree') }}">Gratuit</a>
+                                {% endif %}
+                                {% if exercice.isPremium == 1 %}
+                                    <a class="premium" href="{{ path('search_ePremium') }}">Premium</a>
+                                {% endif %}
+                            </span>
+                        {% set n = n - 1 %}
+                        {% elseif i >= 20 and n >= (i - 20) %}
+                            <a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.grammar.title }} - {{ exercice.title }} - {{ exercice.createdAt | date('d/m/Y') }}</a>
+                            <span class="difficulty-isPremium">
+                                {% if exercice.difficulty == 1 %}
+                                    <a class="easy" href="{{ path('search_eEasy') }}">Facile</a>
+                                {% endif %}
+                                {% if exercice.difficulty == 2 %}
+                                    <a class="medium" href="{{ path('search_eMedium') }}">Moyen</a>
+                                {% endif %}
+                                {% if exercice.difficulty == 3 %}
+                                    <a class="hard" href="{{ path('search_eHard') }}">Difficile</a>
+                                {% endif %}
+                                {% if exercice.isPremium == 0 %}
+                                    <a class="free" href="{{ path('search_eFree') }}">Gratuit</a>
+                                {% endif %}
+                                {% if exercice.isPremium == 1 %}
+                                    <a class="premium" href="{{ path('search_ePremium') }}">Premium</a>
+                                {% endif %}
+                            </span>
+                        {% set n = n - 1 %}
+                        {% endif %}
+                    </span>
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -2,7 +2,12 @@
 
     namespace App\Controller;
 
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Category;
+use App\Entity\Exercice;
+use App\Entity\Grammar;
+use App\Entity\Level;
+use App\Entity\Meaning;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,7 +16,19 @@
          * @Route("/", name="index")
          */
         public function index() {
-            return $this->render('index/index.html.twig');
+            $grammars = $this->getDoctrine()->getRepository(Grammar::class)->findAll();
+            $levels = $this->getDoctrine()->getRepository(Level::class)->findAll();
+            $exercices = $this->getDoctrine()->getRepository(Exercice::class)->findAll();
+            $meanings = $this->getDoctrine()->getRepository(Meaning::class)->findAll();
+            $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+
+            return $this->render('index/index.html.twig', [
+                'grammars' => $grammars,
+                'levels' => $levels,
+                'exercices' => $exercices,
+                'meanings' => $meanings,
+                'categories' => $categories,
+            ]);
         }
     }
 

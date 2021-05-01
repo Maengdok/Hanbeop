@@ -200,7 +200,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 15%; */
     padding: 2px 5px;
     margin: 0 10px;
     font-size: 12px;
@@ -217,29 +216,5 @@
 .title-add {
     display: flex;
     flex-direction: row;
-}
-
-.favorites-menu {
-    position: relative;
-    left: 230px;
-    top: -15px;
-    width: 200px;
-    border: 1px solid red;
-}
-
-.favorites-title {
-    width: 100%;
-    padding-left: 10px;
-    background: #022859;
-    color: white;
-}
-
-.favorites-body {
-    margin: 10px 0 10px 0;
-    padding-left: 10px;
-}
-
-.favorites-footer {
-    padding-left: 10px;
 }
 

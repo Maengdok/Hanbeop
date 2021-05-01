@@ -3,123 +3,98 @@
 /***************/
 
 .index-content {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-}
-
-
-.link-path a {
-    color: black;
-}
-
-.navbar-index {
-    width: 100%;
-    height: 300px;
-    display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
-    align-items: center;
-    padding: 0 10% 0 10%;
-    color: #D0D6D9;
 }
 
-.square {
-    border-radius: 20% 0;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #590212d7; 
-    color: #D0D6D9;
-    font-family: alexa-std, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.square-icon {
-    font-size: 50px;
-}
-
-.square-text {
-    font-size: 30px;
-}
-
-.s-p-c {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 400px;
-}
-
-.s-p {
+.left-content {
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin-right: 20px;
+    padding: 20px;
 }
 
-.index-search-bar, .personnal-bar {
+.top-left-content, .bottom-left-content {
     width: 100%;
-    height: 180px;
-}
-
-.index-search-bar {
-    background: #022859cc;
-}
-
-.personnal-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background: #035AA6;
-}
-
-.leaf {
-    width: 150px;
-    height: 150px;
-    border-radius: 50% 0;
-    background: #590212;
+    height: 48%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #D0D6D9;
-    font-family: alexa-std, sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
-.leaf:hover {
-    background: #730217;
+.top-left-content-title, .bottom-left-content-title, .right-content-block-title {
+width: 100%;
+padding-left: 10px;
+background: #022859;
+color: white;
 }
 
-.leaf-icon {
-    font-size: 30px;
+.grammar, .exercice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0 20px;
 }
 
-.leaf-text {
-    font-size: 20px;
+.right-content {
+    width: 40%;
+    height: 500px;
+    padding: 20px;
 }
 
-.carrousel {
-    width: 25%;
-    height: 100%;
-    background: #EEEEEE;
+.right-content-block {
+    width: 100%;
+}
+
+.category {
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2px 5px;
+    margin: 0 10px;
+    font-size: 12px;
+    border: 1px solid #02285989;
 }
 
-.slide {
-    width: 90%;
-    height: 90%;
-    background: white;
+.difficulty-isPremium {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+
+.easy, .medium, .hard, .free, .premium {
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-size: 12px;
+}
+
+.easy {
+    border: 1px solid rgb(48, 128, 48);
+    color:rgb(48, 128, 48);
+}
+
+.medium {
+    border: 1px solid rgb(203, 143, 80);
+    color:rgb(203, 143, 80);
+}
+
+.hard {
+    border: 1px solid rgb(230, 85, 85);
+    color:rgb(230, 85, 85);
+}
+
+.free {
+    border: 1px solid black;
+}
+
+.premium {
+    border: 1px solid rgb(53, 53, 174);
+    color:rgb(53, 53, 174);
 }
