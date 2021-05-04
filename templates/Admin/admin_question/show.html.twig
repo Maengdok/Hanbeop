@@ -1,26 +1,44 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Question{% endblock %}
 
 {% block body %}
-    <h1>Question</h1>
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_question_index') }}">Questions</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Détails question</h1>
+    <div class="col d-flex d-inline">
+        <a href="{{ path('admin_question_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+
+        <a href="{{ path('admin_question_edit', {'id': question.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+    </div>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <td>{{ question.id }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Grammaire</th>
+                <td>{{ question.exercice.grammar.title }}</td>
+            </tr>
+            <tr>
+                <th>Exercice</th>
+                <td>{{ question.exercice.title }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
                 <td>{{ question.content }}</td>
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('admin_question_index') }}">back to list</a>
-
-    <a href="{{ path('admin_question_edit', {'id': question.id}) }}">edit</a>
 
     {{ include('Admin/admin_question/_delete_form.html.twig') }}
 {% endblock %}

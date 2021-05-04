@@ -1,14 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}UserAnswer index{% endblock %}
 
 {% block body %}
-    <h1>UserAnswer index</h1>
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Réponses utilisateur</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Réponses des utilisateurs</h1>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
+                <th>Utilisateur</th>
+                <th>Grammaire</th>
+                <th>Exercice</th>
+                <th>Question</th>
+                <th>Réponse</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -16,9 +29,13 @@
         {% for user_answer in user_answers %}
             <tr>
                 <td>{{ user_answer.id }}</td>
-                <td>
-                    <a href="{{ path('admin_user_answer_show', {'id': user_answer.id}) }}">show</a>
-                    <a href="{{ path('admin_user_answer_edit', {'id': user_answer.id}) }}">edit</a>
+                <td>{{ user_answer.user }}</td>
+                <td>{{ user_answer.question.exercice.grammar.title }}</td>
+                <td>{{ user_answer.question.exercice.title }}</td>
+                <td>{{ user_answer.question.content }}</td>
+                <td>{{ user_answer.answer.id }} - {{ user_answer.answer.content }}</td>
+                <td class="d-flex d-inline">
+                    {{ include('Admin/admin_user_answer/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -28,6 +45,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('admin_user_answer_new') }}">Create new</a>
 {% endblock %}

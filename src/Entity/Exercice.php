@@ -53,6 +53,7 @@ class Exercice
     public function __construct()
     {
         $this->questions = new ArrayCollection();
+        $this->createdAt = new \DateTime("now");
     }
 
     public function getId(): ?int

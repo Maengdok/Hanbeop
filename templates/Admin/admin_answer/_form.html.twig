@@ -1,4 +1,15 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="col my-4 flex-column">
+        {{ form_label(form.content) }}
+        {{ form_widget(form.content) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.isCorrect) }}
+        {{ form_widget(form.isCorrect) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.question) }}
+        {{ form_widget(form.question) }}
+    </div>
+        <button class="btn btn-outline-success px-4"><i class="far fa-check-circle"></i></button>
 {{ form_end(form) }}

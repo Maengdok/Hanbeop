@@ -1,0 +1,39 @@
+{{ form_start(form) }}
+    <div class="col my-4">
+        {{ form_label(form.pseudo) }}
+        {{ form_widget(form.pseudo) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.password) }}
+        {{ form_widget(form.password) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.fname) }}
+        {{ form_widget(form.fname) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.civility) }}
+        {{ form_widget(form.civility) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.birthDate) }}
+        {{ form_widget(form.birthDate) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.roles) }}
+        {{ form_widget(form.roles) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.subscription) }}
+        {{ form_widget(form.subscription) }}
+    </div>
+    <button class="btn btn-outline-success px-4"><i class="far fa-check-circle"></i></button>
+{{ form_end(form) }}

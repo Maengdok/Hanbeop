@@ -1,30 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
+
 
 {% block title %}Answer{% endblock %}
 
 {% block body %}
-    <h1>Answer</h1>
-
-    <table class="table">
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_answer_index') }}">Réponses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Détails réponse</h1>
+    <a href="{{ path('admin_answer_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+    <a href="{{ path('admin_answer_edit', {'id': answer.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+    <table class="table table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <td>{{ answer.id }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Grammaire</th>
+                <td>{{ answer.question.exercice.grammar.title }}</td>
+            </tr>
+            <tr>
+                <th>Exercice</th>
+                <td>{{ answer.question.exercice.title }}</td>
+            </tr>
+            <tr>
+                <th>Question</th>
+                <td>{{ answer.question.content }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
                 <td>{{ answer.content }}</td>
             </tr>
             <tr>
-                <th>IsCorrect</th>
-                <td>{{ answer.isCorrect ? 'Yes' : 'No' }}</td>
+                <th>Est-ce correcte ?</th>
+                <td>{{ answer.isCorrect ? 'Oui' : 'Non' }}</td>
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('admin_answer_index') }}">back to list</a>
-
-    <a href="{{ path('admin_answer_edit', {'id': answer.id}) }}">edit</a>
 
     {{ include('Admin/admin_answer/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,35 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Meaning index{% endblock %}
 
 {% block body %}
-    <h1>Meaning index</h1>
-
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Significations</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Significations</h1>
+    <a href="{{ path('admin_meaning_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>actions</th>
+                <th>#</th>
+                <th>Grammaire</th>
+                <th>Contenu</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for meaning in meanings %}
             <tr>
                 <td>{{ meaning.id }}</td>
+                <td>{{ meaning.grammar.title }}</td>
                 <td>{{ meaning.content }}</td>
-                <td>
-                    <a href="{{ path('admin_meaning_show', {'id': meaning.id}) }}">show</a>
-                    <a href="{{ path('admin_meaning_edit', {'id': meaning.id}) }}">edit</a>
+                <td class="d-flex d-inline">
+                    <a href="{{ path('admin_meaning_show', {'id': meaning.id}) }}"><button class="btn btn-outline-primary px-4 mx-2"><i class="far fa-eye"></i></button></a>
+                    <a href="{{ path('admin_meaning_edit', {'id': meaning.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+                    {% include "Admin/admin_meaning/_delete_form.html.twig" %}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun résultat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_meaning_new') }}">Create new</a>
+    <a href="{{ path('admin_meaning_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
 {% endblock %}

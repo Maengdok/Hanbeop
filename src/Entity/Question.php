@@ -107,7 +107,7 @@ class Question
 
     public function __toString(): string
     {
-        return $this->content . " - " . $this->exercice->getGrammar()->getTitle();
+        return $this->exercice->getGrammar()->getTitle() . " - " . $this->exercice->getTitle(). " - " . $this->content;
     }
 
     /**

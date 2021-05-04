@@ -1,13 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Edit Exercice{% endblock %}
 
 {% block body %}
-    <h1>Edit Exercice</h1>
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_exercice_index') }}">Exercices</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Modifier</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Modifier exercice</h1>
+    <div class="col-1 d-flex d-inline">
+        <a href="{{ path('admin_exercice_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+        {{ include('Admin/admin_exercice/_delete_form.html.twig') }}
+    </div>
 
-    {{ include('Admin/admin_exercice/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('Admin/admin_exercice/_form.html.twig') }}
 
-    <a href="{{ path('admin_exercice_index') }}">back to list</a>
-
-    {{ include('Admin/admin_exercice/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,24 +1,24 @@
 {% extends 'adminBase.html.twig' %}
 
-{% block title %}Edit Letter{% endblock %}
+{% block title %}Edit User{% endblock %}
 
 {% block body %}
 <div class="row d-flex">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
-            <li class="breadcrumb-item"><a href="{{ path('admin_letter_index') }}">Lettres</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_user_index') }}">Utilisateurs</a></li>
             <li class="breadcrumb-item active" aria-current="page">Modifier</li>
         </ol>
     </nav>
 </div>
-    <h1>Modifier lettre</h1>
+    <h1>Modifier utilisateur</h1>
     <div class="col d-flex d-inline">
-        <a href="{{ path('admin_letter_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+        <a href="{{ path('admin_user_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
 
-        {{ include('Admin/admin_letter/_delete_form.html.twig') }}
+        {{ include('Admin/admin_user/_delete_form.html.twig') }}
     </div>
 
-    {{ include('Admin/admin_letter/_form.html.twig') }}
+    {{ include('Admin/admin_user/_form.html.twig', {'button_label': 'Update'}) }}
 
 {% endblock %}

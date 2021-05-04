@@ -53,7 +53,7 @@ class AdminExampleController extends AbstractController
      */
     public function show(Example $example): Response
     {
-        return $this->render('admin_example/show.html.twig', [
+        return $this->render('Admin/admin_example/show.html.twig', [
             'example' => $example,
         ]);
     }

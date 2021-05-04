@@ -1,0 +1,54 @@
+{% extends 'adminBase.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Utilisateur</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Utilisateurs</h1>
+    <a href="{{ path('admin_user_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Pseudo</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Rôles</th>
+                <th>Abonnement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.pseudo }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.fname }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.subscription ? 'Oui' : 'Non' }}</td>
+                <td class="d-flex d-inline">
+                    <a href="{{ path('admin_user_show', {'id': user.id}) }}"><button class="btn btn-outline-primary px-4 mx-2"><i class="far fa-eye"></i></button></a>
+                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+                    {% include "Admin/admin_user/_delete_form.html.twig" %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Aucun résultat trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_user_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
+{% endblock %}

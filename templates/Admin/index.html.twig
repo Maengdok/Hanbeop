@@ -1,0 +1,58 @@
+{% extends "adminBase.html.twig" %}
+
+{% block body %}
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Admin</li>
+        </ol>
+    </nav>
+</div>
+
+<h1>Admin</h1>
+
+<div class="row d-flex">
+    <div class="col-6 d-flex justify-content-start">
+        <a href="{{ path('admin_grammar_index') }}" class="text-decoration-none">
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Grammaire</h5>
+                    <p class="card-text">
+                        Nombre de points de grammaire :<br>
+                        <h3 class="d-flex justify-content-center">{{ grammars | length }}</h3>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="{{ path('admin_exercice_index') }}" class="text-decoration-none">
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Exercice</h5>
+                    <p class="card-text">
+                        Nombre d'exercices :<br>
+                        <h3 class="d-flex justify-content-center">{{ exercices | length }}</h3>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row d-flex">
+    <div class="col d-flex justify-content-center">
+        <a href="{{ path('admin_user_index') }}" class="text-decoration-none">
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Utilisateur</h5>
+                    <p class="card-text">
+                        Nombre d'utilisateurs :<br>
+                        <h3 class="d-flex justify-content-center">{{ users | length }}</h3>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

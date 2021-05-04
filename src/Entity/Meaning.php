@@ -137,6 +137,6 @@ class Meaning
 
     public function __toString(): string
     {
-        return $this->content;
+        return $this->grammar->getTitle() . " - " . $this->content;
     }
 }

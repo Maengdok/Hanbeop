@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="col my-4">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.difficulty) }}
+        {{ form_widget(form.difficulty) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.grammar) }}
+        {{ form_widget(form.grammar) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.createdAt) }}
+        {{ form_widget(form.createdAt) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.isPremium) }}
+        {{ form_widget(form.isPremium) }}
+    </div>
+    <button class="btn btn-outline-success px-4"><i class="far fa-check-circle"></i></button>
 {{ form_end(form) }}

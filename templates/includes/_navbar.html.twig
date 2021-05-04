@@ -4,9 +4,9 @@
                 Bonjour, <strong id="logged-user">{{ app.user.pseudo }}</strong> !
         </span>
         <div class="connection">
-            {# {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_ADMIN') %}
                 <span class="admin-link"><a href="{{ path('admin') }}">Admin</a></span>
-            {% endif %} #}
+            {% endif %}
             <span class="profil-link"><a href="{{ path('profile') }}">Mon profil</a></span>
             <span class="logout-link"><a href="{{ path('app_logout') }}">Se déconnecter</a></span>
         </div>

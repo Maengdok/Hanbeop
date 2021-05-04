@@ -1,4 +1,7 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="col my-4">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <button class="btn btn-outline-success px-4"><i class="far fa-check-circle"></i></button>
 {{ form_end(form) }}

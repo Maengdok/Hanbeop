@@ -2,8 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Grammar;
+use App\Entity\Level;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,10 +16,20 @@ class GrammarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('letter')
-            ->add('category')
-            ->add('level')
+            ->add('title', TextType::class, [
+                'label' => 'Titre'
+            ])
+            ->add('letter', TextType::class, [
+                'label' => 'Lettre'
+            ])
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'label' => 'Catégorie'
+            ])
+            ->add('level', EntityType::class, [
+                'class' => Level::class,
+                'label' => 'Niveau'
+            ])
         ;
     }
 

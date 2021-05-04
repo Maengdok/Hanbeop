@@ -1,0 +1,76 @@
+{% extends 'adminBase.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_user_index') }}">Utilisateurs</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Détails utilisateur</h1>
+    <div class="col d-flex d-inline">
+        <a href="{{ path('admin_user_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+
+        <a href="{{ path('admin_user_edit', {'id': user.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+    </div>
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>#</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Pseudo</th>
+                <td>{{ user.pseudo }}</td>
+            </tr>
+            <tr>
+                <th>Mot de passe</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ user.fname }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+                <th>Civilité</th>
+                <td>
+                    {% if user.civility == 1 %}
+                        Monsieur
+                    {% elseif user.civility == 2 %}
+                        Madame
+                    {% else %}
+                        Mademoiselle
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ user.birthDate ? user.birthDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Rôles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Abonnement</th>
+                <td>{{ user.subscription ? 'Oui' : 'Non' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {{ include('Admin/admin_user/_delete_form.html.twig') }}
+{% endblock %}

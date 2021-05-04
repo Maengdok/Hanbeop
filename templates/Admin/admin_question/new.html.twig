@@ -1,11 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}New Question{% endblock %}
 
 {% block body %}
-    <h1>Create new Question</h1>
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_question_index') }}">Questions</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nouveau</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Nouvelle question</h1>
+    <a href="{{ path('admin_question_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
 
     {{ include('Admin/admin_question/_form.html.twig') }}
 
-    <a href="{{ path('admin_question_index') }}">back to list</a>
 {% endblock %}

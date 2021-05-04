@@ -26,59 +26,6 @@ class AdminUserAnswerController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="admin_user_answer_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $userAnswer = new UserAnswer();
-        $form = $this->createForm(UserAnswerType::class, $userAnswer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($userAnswer);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('admin_user_answer_index');
-        }
-
-        return $this->render('Admin/admin_user_answer/new.html.twig', [
-            'user_answer' => $userAnswer,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="admin_user_answer_show", methods={"GET"})
-     */
-    public function show(UserAnswer $userAnswer): Response
-    {
-        return $this->render('Admin/admin_user_answer/show.html.twig', [
-            'user_answer' => $userAnswer,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="admin_user_answer_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, UserAnswer $userAnswer): Response
-    {
-        $form = $this->createForm(UserAnswerType::class, $userAnswer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('admin_user_answer_index');
-        }
-
-        return $this->render('Admin/admin_user_answer/edit.html.twig', [
-            'user_answer' => $userAnswer,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="admin_user_answer_delete", methods={"POST"})
      */
     public function delete(Request $request, UserAnswer $userAnswer): Response

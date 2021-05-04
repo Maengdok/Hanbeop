@@ -1,37 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Letter index{% endblock %}
 
 {% block body %}
-    <h1>Letter index</h1>
-
-    <table class="table">
+<div class="row d-flex">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex justify-content-end">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('admin') }}">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lettres</li>
+        </ol>
+    </nav>
+</div>
+    <h1>Lettres</h1>
+    <a href="{{ path('admin_letter_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Symbol</th>
-                <th>actions</th>
+                <th>#</th>
+                <th>Caractère</th>
+                <th>Nom</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for letter in letters %}
             <tr>
                 <td>{{ letter.id }}</td>
-                <td>{{ letter.name }}</td>
                 <td>{{ letter.symbol }}</td>
-                <td>
-                    <a href="{{ path('admin_letter_show', {'id': letter.id}) }}">show</a>
-                    <a href="{{ path('admin_letter_edit', {'id': letter.id}) }}">edit</a>
+                <td>{{ letter.name }}</td>
+                <td class="d-flex d-inline">
+                    <a href="{{ path('admin_letter_show', {'id': letter.id}) }}"><button class="btn btn-outline-primary px-4 mx-2"><i class="far fa-eye"></i></button></a>
+                    <a href="{{ path('admin_letter_edit', {'id': letter.id}) }}"><button class="btn btn-outline-warning px-4 mx-2"><i class="far fa-edit"></i></button></a>
+                    {% include "Admin/admin_letter/_delete_form.html.twig" %}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun résultat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_letter_new') }}">Create new</a>
+    <a href="{{ path('admin_letter_new') }}"><button class="btn btn-outline-success px-4"><i class="fas fa-plus"></i></button></a>
 {% endblock %}

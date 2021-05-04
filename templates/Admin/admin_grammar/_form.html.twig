@@ -1,4 +1,19 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="col my-4">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.letter) }}
+        {{ form_widget(form.letter) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.category) }}
+        {{ form_widget(form.category) }}
+    </div>
+    <div class="col my-4">
+        {{ form_label(form.level) }}
+        {{ form_widget(form.level) }}
+    </div>
+    <button class="btn btn-outline-success px-4"><i class="far fa-check-circle"></i></button>
 {{ form_end(form) }}

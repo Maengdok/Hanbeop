@@ -9,43 +9,84 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ path('admin') }}">Admin</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_grammars') }}">Grammaire</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Grammaire
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_grammar_index') }}">Grammaires</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_letter_index') }}">Lettres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_meaning_index') }}">Significations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_formulation_index') }}">Formulations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_example_index') }}">Exemples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_level_index') }}">Niveaux</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_category_index') }}">Catégories</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Exercice
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_exercice_index') }}">Exercices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_question_index') }}">Questions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_answer_index') }}">Réponses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_user_answer_index') }}">Réponses utilisateur</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_exercices') }}">Exercices</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_quizzes') }}">Quizzes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_roles') }}">Rôles Quizz</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_categories') }}">Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_classifications') }}">Classifications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_users') }}">Utilisateurs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('list_profs') }}">Professeurs</a>
+          <a class="nav-link" href="{{ path('admin_user_index') }}">Utilisateurs</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ajouter
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ path('add_user') }}">Ajouter Utilisateur</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_grammar') }}">Ajouter Grammaire</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_exercice') }}">Ajouter Exercice</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_quizz') }}">Ajouter Quizz</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_role') }}">Ajouter Rôle Quizz</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_category') }}">Ajouter Catégorie</a></li>
-            <li><a class="dropdown-item" href="{{ path('add_classification') }}">Ajouter Classification</a></li>
-            <li><a class="dropdown-item" href="#">Ajouter Professeur</a></li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Grammaire</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('admin_grammar_new') }}">Ajouter Grammaire</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_letter_new') }}">Ajouter Lettre</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_meaning_new') }}">Ajouter Signification</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_formulation_new') }}">Ajouter Formulation</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_example_new') }}">Ajouter Exemple</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_category_new') }}">Ajouter Catégorie</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_level_new') }}">Ajouter Niveau</a></li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Exercice</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('admin_exercice_new') }}">Ajouter Exercice</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_question_new') }}">Ajouter Question</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_answer_new') }}">Ajouter Réponse</a></li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Utilisateur</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('admin_user_new') }}">Ajouter Utilisateur</a></li>
           </ul>
         </li>
       </ul>
