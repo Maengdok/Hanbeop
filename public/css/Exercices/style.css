@@ -488,7 +488,7 @@
     }
 
     .exercices-classification-section {
-        width: 80%;
+        width: 100%;
         height: 100%;
         margin-top: 2%;
         display: flex;
@@ -886,7 +886,7 @@
     }
 
     .exercices-classification-section {
-        width: 80%;
+        width: 100%;
         height: 100%;
         margin-top: 2%;
         display: flex;
@@ -1250,7 +1250,7 @@
     }
     
     .letter-filter {
-        width: 60%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1295,7 +1295,7 @@
     }
     
     .exercices-classification-section {
-        width: 80%;
+        width: 100%;
         height: 100%;
         margin-top: 2%;
         display: flex;

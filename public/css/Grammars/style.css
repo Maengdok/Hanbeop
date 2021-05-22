@@ -223,11 +223,11 @@
 
 /* ! style smartphones et petites tablettes en portrait */
 @media only screen and (min-width: 374px) and (max-width: 799px) {
-    .docu-page, .about-page {
+    .grammar-page {
         width: 90%;
         display: flex;
         justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
         flex: 1 0 auto;
     }
     
@@ -732,7 +732,7 @@
     }
     
     .letter-filter {
-        width: 100%;
+        width: 80%;
         display: flex;
         border: 1px solid black;
         padding: 20px 5px;
@@ -765,11 +765,11 @@
         height: 100%;
         margin-top: 2%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .classification-section, .categories-section {
-        width: 100%;
+        width: 45%;
         background: #EEEEEE;
         margin: 20px 0;
     }
@@ -1035,6 +1035,10 @@
         flex-direction: row;
         justify-content: space-between;
         padding-left: 20px;
+    }
+
+    .classification-title h5 {
+        width: 70%;
     }
     
     .classification-body {

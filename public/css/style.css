@@ -250,7 +250,7 @@ a {
     flex-direction: row;
     list-style: none;
     justify-content: space-around;
-    font-family: 'korean_calligraphyregular';
+    font-family: 'korean_calligraphyregular', alexa-std, serif;
     font-size: 30px;
 }
 
