@@ -41,7 +41,7 @@ color: white;
 
 .right-content {
     width: 40%;
-    height: 500px;
+    /* height: 500px; */
     padding: 20px;
 }
 
@@ -97,4 +97,429 @@ color: white;
 .premium {
     border: 1px solid rgb(53, 53, 174);
     color:rgb(53, 53, 174);
+}
+
+/***********************/
+/*** >374px & <800px ***/
+/***********************/
+
+/* ! style smartphones et petites tablettes en portrait */
+@media only screen and (min-width: 374px) and (max-width: 799px) {
+    .index-content {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .left-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    .top-left-content, .bottom-left-content {
+        width: 100%;
+        height: 48%;
+        display: flex;
+        margin: 20px 0;
+        flex-direction: column;
+    }
+    
+    .top-left-content-title, .bottom-left-content-title, .right-content-block-title {
+        width: 100%;
+        background: #022859;
+        color: white;
+        padding: 0 5px;
+    }
+    
+    .grammar, .exercice {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .grammar a, .exercice a {
+        font-size: 10px;
+    }
+    
+    .right-content {
+        width: 100%;
+    }
+    
+    .right-content-block {
+        width: 100%;
+    }
+
+    .category {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #02285989;
+    }
+    
+    .category a, .difficulty-isPremium a {
+        font-size: 8px;
+        padding: 1px 5px;
+    }
+
+    .difficulty-isPremium {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 40%;
+    }
+    
+    .easy, .medium, .hard, .free, .premium {
+        border-radius: 10px;
+    }
+
+    .easy {
+        border: 1px solid rgb(48, 128, 48);
+        color:rgb(48, 128, 48);
+    }
+    
+    .medium {
+        border: 1px solid rgb(203, 143, 80);
+        color:rgb(203, 143, 80);
+    }
+    
+    .hard {
+        border: 1px solid rgb(230, 85, 85);
+        color:rgb(230, 85, 85);
+    }
+    
+    .free {
+        border: 1px solid black;
+    }
+    
+    .premium {
+        border: 1px solid rgb(53, 53, 174);
+        color:rgb(53, 53, 174);
+    }
+}
+
+/***********************/
+/*** >800px & <966px ***/
+/***********************/
+
+/* ! style petites-moyennes tablettes */
+@media only screen and (min-width: 800px) and (max-width: 966px) {
+    .index-content {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .left-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    .top-left-content, .bottom-left-content {
+        width: 100%;
+        height: 48%;
+        display: flex;
+        margin: 20px 0;
+        flex-direction: column;
+    }
+    
+    .top-left-content-title, .bottom-left-content-title, .right-content-block-title {
+        width: 100%;
+        background: #022859;
+        color: white;
+        padding: 0 5px;
+    }
+    
+    .grammar, .exercice {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .grammar a, .exercice a {
+        font-size: 15px;
+    }
+    
+    .right-content {
+        width: 100%;
+    }
+    
+    .right-content-block {
+        width: 100%;
+    }
+
+    .category {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #02285989;
+    }
+    
+    .difficulty-isPremium {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .category a, .difficulty-isPremium a {
+        font-size: 12px;
+        padding: 1px 5px;
+    }
+    
+    .easy, .medium, .hard, .free, .premium {
+        border-radius: 10px;
+    }
+
+    .easy {
+        border: 1px solid rgb(48, 128, 48);
+        color:rgb(48, 128, 48);
+    }
+    
+    .medium {
+        border: 1px solid rgb(203, 143, 80);
+        color:rgb(203, 143, 80);
+    }
+    
+    .hard {
+        border: 1px solid rgb(230, 85, 85);
+        color:rgb(230, 85, 85);
+    }
+    
+    .free {
+        border: 1px solid black;
+    }
+    
+    .premium {
+        border: 1px solid rgb(53, 53, 174);
+        color:rgb(53, 53, 174);
+    }
+}
+
+/************************/
+/*** >966px & <1024px ***/
+/************************/
+/* ! style grandes tablettes */
+@media only screen and (min-width: 967px) and (max-width: 1024px) {
+    .index-content {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .left-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    .top-left-content, .bottom-left-content {
+        width: 100%;
+        height: 48%;
+        display: flex;
+        margin: 20px 0;
+        flex-direction: column;
+    }
+    
+    .top-left-content-title, .bottom-left-content-title, .right-content-block-title {
+        width: 100%;
+        background: #022859;
+        color: white;
+        padding: 0 5px;
+    }
+    
+    .grammar, .exercice {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .grammar a, .exercice a {
+        font-size: 15px;
+    }
+    
+    .right-content {
+        width: 100%;
+    }
+    
+    .right-content-block {
+        width: 100%;
+    }
+
+    .category {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #02285989;
+    }
+    
+    .difficulty-isPremium {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .category a, .difficulty-isPremium a {
+        font-size: 12px;
+        padding: 1px 5px;
+    }
+    
+    .easy, .medium, .hard, .free, .premium {
+        border-radius: 10px;
+    }
+
+    .easy {
+        border: 1px solid rgb(48, 128, 48);
+        color:rgb(48, 128, 48);
+    }
+    
+    .medium {
+        border: 1px solid rgb(203, 143, 80);
+        color:rgb(203, 143, 80);
+    }
+    
+    .hard {
+        border: 1px solid rgb(230, 85, 85);
+        color:rgb(230, 85, 85);
+    }
+    
+    .free {
+        border: 1px solid black;
+    }
+    
+    .premium {
+        border: 1px solid rgb(53, 53, 174);
+        color:rgb(53, 53, 174);
+    }
+}
+
+/*************************/
+/*** >1025px & <1600px ***/
+/*************************/
+
+/* ! style petits desktops */
+@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+    .index-content {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    .left-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    .top-left-content, .bottom-left-content {
+        width: 100%;
+        height: 48%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .top-left-content-title, .bottom-left-content-title, .right-content-block-title {
+    width: 100%;
+    padding-left: 10px;
+    background: #022859;
+    color: white;
+    }
+    
+    .grammar, .exercice {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 0 20px;
+    }
+    
+    .grammar a, .exercice a {
+        font-size: 12px;
+    }
+
+    .right-content {
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .right-content-block {
+        width: 100%;
+    }
+    
+    .category {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #02285989;
+    }
+    
+    .difficulty-isPremium {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+    }
+
+    .category a, .difficulty-isPremium a {
+        font-size: 12px;
+        padding: 1px 5px;
+    }
+    
+    .easy, .medium, .hard, .free, .premium {
+        border-radius: 10px;
+        padding: 0 5px;
+        margin: 0 5px;
+        font-size: 12px;
+    }
+    
+    .easy {
+        border: 1px solid rgb(48, 128, 48);
+        color:rgb(48, 128, 48);
+    }
+    
+    .medium {
+        border: 1px solid rgb(203, 143, 80);
+        color:rgb(203, 143, 80);
+    }
+    
+    .hard {
+        border: 1px solid rgb(230, 85, 85);
+        color:rgb(230, 85, 85);
+    }
+    
+    .free {
+        border: 1px solid black;
+    }
+    
+    .premium {
+        border: 1px solid rgb(53, 53, 174);
+        color:rgb(53, 53, 174);
+    }
 }

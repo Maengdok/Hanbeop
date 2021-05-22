@@ -60,17 +60,17 @@
     justify-content: center;
 }
 
+.terms span {
+    display: flex;
+    align-items: center;
+}
+
+.terms a {
+    color: #590212;
+}
+
 .registration input[type="checkbox"] {
     margin: 5px;
-}
-
-.remember_me label {
-    display: flex;
-    justify-content: center;
-}
-
-.remember_me input {
-    margin-right: 10px;
 }
 
 .valid-btn button {
@@ -85,4 +85,29 @@
 .reset-password a {
     display: flex;
     justify-content: end;
+}
+
+/***********************/
+/*** >374px & <800px ***/
+/***********************/
+
+/* ! style smartphones et petites tablettes en portrait */
+@media only screen and (min-width: 374px) and (max-width: 799px) {
+    .sign-in {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 auto;
+    }
+
+    .form-section {
+        width: 90%;
+        border-radius: 1%;
+    }
+
+    .reset-password a {
+        display: flex;
+        justify-content: center;
+    }
+
 }

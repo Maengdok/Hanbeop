@@ -48,8 +48,9 @@
                             }) }}                        
                             <div class="terms">
                                 {{ form_row(registrationForm.agreeTerms, {
-                                    label: 'Accepter les termes'
+                                    label: ' '
                                 }) }}
+                                <span>Accepter les&nbsp<a href="{{ path('about') }}">termes</a><span>
                             </div>
                         </div>
                         <!-- ADD AN EMAIL VALIDATOR FOR USER -->

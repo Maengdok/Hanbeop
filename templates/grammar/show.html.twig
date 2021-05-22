@@ -32,18 +32,20 @@
                     <div id ="notion-block" style="display:none;">
                         <div class="notion-body">
                             <strong>{{ grammar.title }}</strong>
-                            <span class="category-tags">
-                                <a href="{{ path('search_gCategory', {id: grammar.category.id}) }}">{{ grammar.category.name}}</a>
-                            </span>
-                            <span class="classification-tags">
-                                <a href="{{ path('search_gLevel', {id: grammar.level.id}) }}">{{ grammar.level.name }}</a>
-                            </span>
+                            <div class="cat-class">
+                                <span class="category-tags">
+                                    <a href="{{ path('search_gCategory', {id: grammar.category.id}) }}">{{ grammar.category.name}}</a>
+                                </span>
+                                <span class="classification-tags">
+                                    <a href="{{ path('search_gLevel', {id: grammar.level.id}) }}">{{ grammar.level.name }}</a>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="meaning">
                     <div class="notion-head">
-                        <h2>Signification et utilisation</h2>
+                        <h2>Signification</h2>
                         <div class="see-more" onclick="seeMore('meaning-block')">
                             Voir plus <i class="fas fa-sort-down"></i>
                         </div>

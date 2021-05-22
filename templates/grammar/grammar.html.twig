@@ -71,6 +71,7 @@
                                 <h5><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a></h5>
                                 <span class="see-more" onclick="seeMore('{{ category }}')">Voir plus <i class="fas fa-sort-down"></i></span>
                             </div>
+                            <div class="categories-separator"></div>
                             <div id="{{ category }}" style="display:none">
                                 <div class="classification-body kr">
                                     {% for grammar in grammars %} 

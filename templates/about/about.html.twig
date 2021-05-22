@@ -70,15 +70,27 @@
                     </div>
                 </div>
                 <div class="about-title">
-                    <h2>Réglement Général sur la Protection des Données</h2>
+                    <h2>RGPD</h2>
                     <span class="see-more" onclick="seeMore('rgpd')">
                         Voir plus <i class="fas fa-sort-down"></i>
                     </span>
                 </div>
                 <div class="about-separator"></div>
                 <div id="rgpd" style="display:none">
-                    <div class="terms-of-use">
+                    <div class="rgpd">
                             {% include "includes/about/_rgpd.html.twig" %}
+                    </div>
+                </div>
+                <div class="about-title">
+                    <h2>Cookies</h2>
+                    <span class="see-more" onclick="seeMore('cookies')">
+                        Voir plus <i class="fas fa-sort-down"></i>
+                    </span>
+                </div>
+                <div class="about-separator"></div>
+                <div id="cookies" style="display:none">
+                    <div class="cookies">
+                            {% include "includes/about/_cookies.html.twig" %}
                     </div>
                 </div>
             </div>

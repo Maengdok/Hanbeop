@@ -7,9 +7,9 @@
 {% block body %}
 
     <div class="link-path">
-        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('exercices') }}">Exercices</a> > {{ exercice.title }}</span>
+        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('exercices') }}">Exercices</a> > {{ exercice.grammar.title}} - {{ exercice.title }}</span>
     </div>
-    <div class="exercice-page">
+    <div class="exercices-page">
         {% if not is_granted("ROLE_PREMIUM") and is_granted("ROLE_USER") %}
             <div class="side-menus">
                 {% include "includes/exercices/_premiumMenu.html.twig" %}
@@ -18,7 +18,7 @@
         <div class="exercice-section">
             <div class="title-path">
                 <div class="head-title">
-                    <h1>{{ exercice.title }}</h1>
+                    <h1>{{ exercice.grammar.title }} - {{ exercice.title }}</h1>
                     <div class="head-title-details">
                         <p>
                             {% if exercice.difficulty == 1 %}
@@ -54,7 +54,7 @@
                         <div class="quizz">
                             <div class="quizz-question">
                                 {% if question.exercice.grammar.id == exercice.grammar.id and question.exercice.id == exercice.id %}
-                                    <h4>Question : {{ question.content }} {{ question.exercice.title }} {{ exercice.grammar.title }}</h4>
+                                    <h4>Question : {{ question.content }}</h4>
                                 {% endif %}
                             </div>
                             <div class="quizz-answers">

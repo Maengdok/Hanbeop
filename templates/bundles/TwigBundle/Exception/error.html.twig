@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bundles/TwigBundle/Exception/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Erreur {{ status_code }} : {{ status_text }}</h1>
+
+    <p>
+        Vérifiez que vous n'ayez fait aucune erreur dans l'URL ou <a href="{{ path('index') }}">retournez à l'index</a>
+    </p>
+{% endblock %}

@@ -11,11 +11,6 @@
     </div>
     <div class="profile-page">
         {% if is_granted('ROLE_USER') %}    
-            <div class="side-menus">
-                {% if not is_granted('ROLE_PREMIUM') %}
-                    {% include "includes/exercices/_premiumMenu.html.twig" %}
-                {% endif %}
-            </div>
             <div class="profile-section">
                 <div class="title-path">
                     <div class="head-title">
