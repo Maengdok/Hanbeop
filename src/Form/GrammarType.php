@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Grammar;
+use App\Entity\Letter;
 use App\Entity\Level;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -19,7 +20,8 @@ class GrammarType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre'
             ])
-            ->add('letter', TextType::class, [
+            ->add('letter', EntityType::class, [
+                'class' => Letter::class,
                 'label' => 'Lettre'
             ])
             ->add('category', EntityType::class, [

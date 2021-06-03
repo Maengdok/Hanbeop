@@ -38,7 +38,7 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
 
             $message = (new \Swift_Message('Bienvenue sur Hanbeop'))
-                ->setFrom('test-projet@philiance.com')
+                ->setFrom('axel.pion@maengdok.fr')
                 ->setTo($user->getEmail())
                 ->setBody('Bonjour,<br> je vous souhaite la bienvenue sur le site Hanbeop!<br><br>안녕하세요!<br> 한법의 웹사이트에서 만나서 반갑습니다!', 'text/html');
             $mailer->send($message);

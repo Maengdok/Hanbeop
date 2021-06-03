@@ -9,11 +9,6 @@
         <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('exercices') }}">Exercices</a> > Premium</span>
     </div>
     <div class="search-page">
-        {% if not is_granted("ROLE_PREMIUM") and is_granted("ROLE_USER") %}
-            <div class="side-menus">
-                {% include "includes/exercices/_premiumMenu.html.twig" %}
-            </div>
-        {% endif %}
         <div class="search-section">
             <div class="title-path">
                 <div class="head-title">

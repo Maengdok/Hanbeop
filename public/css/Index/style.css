@@ -104,7 +104,7 @@ color: white;
 /***********************/
 
 /* ! style smartphones et petites tablettes en portrait */
-@media only screen and (min-width: 374px) and (max-width: 799px) {
+@media only screen and (min-width: 360px) and (max-width: 799px) {
     .index-content {
         width: 80%;
         display: flex;
@@ -311,10 +311,10 @@ color: white;
 }
 
 /************************/
-/*** >966px & <1024px ***/
+/*** >966px & <1230px ***/
 /************************/
 /* ! style grandes tablettes */
-@media only screen and (min-width: 967px) and (max-width: 1024px) {
+@media only screen and (min-width: 967px) and (max-width: 1230px) {
     .index-content {
         width: 80%;
         display: flex;
@@ -415,11 +415,11 @@ color: white;
 }
 
 /*************************/
-/*** >1025px & <1600px ***/
+/*** >1230px & <1600px ***/
 /*************************/
 
 /* ! style petits desktops */
-@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+@media only screen and (min-width: 1231px) and (max-width: 1600px) {
     .index-content {
         width: 80%;
         display: flex;

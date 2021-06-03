@@ -84,11 +84,11 @@
     width: 100%;
 }
 
-.grammar-classification h4 {
+.grammar-classification .grammar-classification h4, .categories-section .classification-title h5 {
     padding: 0 0 2px 10px;
 }
 
-.category-title {
+.category-title, .classification-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -105,7 +105,7 @@
     background: #103668;
 }
 
-.classification-title {
+.grammar-classification .classification-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -114,11 +114,18 @@
 
 .classification-body {
     padding: 0 0 30px 30px;
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.classification .classification-body a {
+    margin: 0 10px 0 0;
 }
 
 .classification-body a {
-    margin: 0 10px 0 0;
+    width: 100px;
 }
 
 /********************/
@@ -222,7 +229,7 @@
 /***********************/
 
 /* ! style smartphones et petites tablettes en portrait */
-@media only screen and (min-width: 374px) and (max-width: 799px) {
+@media only screen and (min-width: 360px) and (max-width: 799px) {
     .grammar-page {
         width: 90%;
         display: flex;
@@ -336,22 +343,22 @@
         background: #103668;
     }
     
-    .classification-title {
+    /* .classification-title {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-left: 20px;
-    }
+    } */
     
     .classification-body {
         padding: 0 0 30px 30px;
         display: flex;
     }
     
-    .classification-body a {
+    /* .classification-body a {
         margin: 0 10px 0 0;
     }
-    
+     */
     /********************/
     /*** show_grammar ***/
     /********************/
@@ -937,7 +944,7 @@
     }
     
     .separator {
-        width: 90%;
+        width: 80%;
         height: 2px;
         background: rgb(133, 132, 132);
         margin-bottom: 20px;
@@ -1073,6 +1080,7 @@
     .title-path {
         display: flex;
         flex-direction: row;
+        justify-content: start;
         width: 90%;
     }
     

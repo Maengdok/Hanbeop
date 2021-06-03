@@ -309,40 +309,6 @@
     margin-bottom: 20px;
 }
 
-.premium-link {
-    width: 100%;
-    height: 100px;
-    margin: 50px 0 50px 0;
-    background: #4373b6af;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.premium-link a {
-    color: white;
-    width: 100%;
-    height: 100%;
-}
-
-.premium-card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.premium-icon {
-    font-size: 50px;
-}
-
-.premium-card h4 {
-    margin-bottom: 20px;
-}
-
 .exo-title {
     display: flex;
     flex-direction: row;
@@ -405,7 +371,7 @@
 /***********************/
 
 /* ! style smartphones et petites tablettes en portrait */
-@media only screen and (min-width: 374px) and (max-width: 799px) {
+@media only screen and (min-width: 360px) and (max-width: 799px) {
     .exercices-page {
         width: 90%;
         display: flex;
@@ -413,12 +379,6 @@
         flex-direction: column;
         justify-content: space-evenly;
         flex: 1 0 auto;
-    }
-
-    .side-menus {
-        width: 100%;
-        display: flex;
-        justify-content: center;
     }
     
     .exercices-section {
@@ -706,36 +666,6 @@
         width: 100%;
         height: 1px;
         background: rgb(133, 132, 132);
-        margin-bottom: 20px;
-    }
-    
-    .premium-link {
-        width: 80%;
-        background: #4373b6af;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .premium-link a {
-        color: white;
-        width: 100%;
-    }
-    
-    .premium-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .premium-icon {
-        font-size: 50px;
-    }
-    
-    .premium-card h4 {
         margin-bottom: 20px;
     }
     
@@ -813,12 +743,6 @@
         flex: 1 0 auto;
     }
 
-    .side-menus {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
     .exercices-section {
         display: flex;
         width: 100%;
@@ -1107,40 +1031,6 @@
         margin-bottom: 20px;
     }
     
-    .premium-link {
-        width: 60%;
-        height: 100px;
-        margin: 50px 0 50px 0;
-        background: #4373b6af;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .premium-link a {
-        color: white;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .premium-card {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .premium-icon {
-        font-size: 50px;
-    }
-    
-    .premium-card h4 {
-        margin-bottom: 20px;
-    }
-    
     .exo-title {
         display: flex;
         flex-direction: row;
@@ -1214,12 +1104,6 @@
         flex: 1 0 auto;
     }
 
-    .side-menus {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
     .exercices-section {
         display: flex;
         width: 100%;
@@ -1510,31 +1394,6 @@
         margin-bottom: 20px;
     }
     
-    .premium-link {
-        width: 60%;
-        height: 100px;
-        background: #4373b6af;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .premium-link a {
-        color: white;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .premium-card {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
     .premium-icon {
         font-size: 50px;
     }
@@ -1612,25 +1471,16 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: start;
         flex: 1 0 auto;
     }
 
-    .side-menus {
+    .exercices-section {
+        display: flex;
         width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .premium-link {
-        width: 40%;
-        height: 100px;
-        margin: 50px 0 50px 0;
-        background: #4373b6af;
-        color: white;
-        display: flex;
+        height: 100%;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
 
     .created-title {
@@ -1689,14 +1539,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: start;
         flex: 1 0 auto;
-    }
-
-    .side-menus {
-        width: 50%;
-        display: flex;
-        justify-content: center;
     }
     
     .exercices-section {
@@ -1989,40 +1833,6 @@
         width: 100%;
         height: 1px;
         background: rgb(133, 132, 132);
-        margin-bottom: 20px;
-    }
-    
-    .premium-link {
-        width: 80%;
-        height: 100px;
-        margin: 50px 0 50px 0;
-        background: #4373b6af;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .premium-link a {
-        color: white;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .premium-card {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .premium-icon {
-        font-size: 50px;
-    }
-    
-    .premium-card h4 {
         margin-bottom: 20px;
     }
     

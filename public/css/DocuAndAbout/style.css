@@ -19,6 +19,10 @@
     width: 250px;
 }
 
+.title-path {
+    width: 90%;
+}
+
 .docu-section, .about-section {
     display: flex;
     width: 100%;
@@ -89,7 +93,7 @@
 /***********************/
 
 /* ! style smartphones et petites tablettes en portrait */
-@media only screen and (min-width: 374px) and (max-width: 799px) {
+@media only screen and (min-width: 360px) and (max-width: 799px) {
     .docu-page, .about-page {
         width: 80%;
         display: flex;
