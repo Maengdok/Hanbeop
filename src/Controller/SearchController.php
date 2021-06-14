@@ -49,7 +49,7 @@ class SearchController extends AbstractController
     /**
      * @Route("/recherche/grammaire/par-letter/{id}", name="search_gLetter")
      */
-    public function grammarLeteer($id): Response
+    public function grammarLetter($id): Response
     {
         $letter = $this->getDoctrine()->getRepository(Letter::class)->find($id);
         $grammars = $this->getDoctrine()->getRepository(Grammar::class)->findAll();

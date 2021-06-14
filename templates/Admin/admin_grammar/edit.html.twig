@@ -12,13 +12,15 @@
         </ol>
     </nav>
 </div>
-    <h1>Edit Grammar</h1>
-    <div class="col d-flex d-inline">
-        <a href="{{ path('admin_grammar_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
+    <div class="block">
+        <h1>Modifier grammaire</h1>
+        <div class="col d-flex d-inline">
+            <a href="{{ path('admin_grammar_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
 
-        {{ include('Admin/admin_grammar/_delete_form.html.twig') }}
+            {{ include('Admin/admin_grammar/_delete_form.html.twig') }}
+        </div>
+
+        {{ include('Admin/admin_grammar/_form.html.twig', {'button_label': 'Update'}) }}
     </div>
-
-    {{ include('Admin/admin_grammar/_form.html.twig', {'button_label': 'Update'}) }}
 
 {% endblock %}

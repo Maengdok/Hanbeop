@@ -26,7 +26,9 @@ class UserFormType extends AbstractType {
             ->add('name', TextType::class, [
                 'label' => 'Nom',
             ])
-            ->add('email', EmailType::class)
+            ->add('email', EmailType::class, [
+                'disabled' => true
+            ])
             ->add('birthDate', DateType::class, [
                 'label' => 'Date de naissance',
                 'years' => range(date('Y') - 100, date('Y')),

@@ -22,29 +22,29 @@
                     {{ form_start(registrationForm) }}
                         <div class="registration block">
                             {{ form_row(registrationForm.pseudo, {
-                                label: 'Pseudo'
+                                label: 'Pseudo *'
                             }) }}
                             {{ form_row(registrationForm.name, {
-                                label: 'Nom'
+                                label: 'Nom *'
                             }) }}
                             {{ form_row(registrationForm.fname, {
-                                label: 'Prénom'
+                                label: 'Prénom *'
                             }) }}
                             {{ form_row(registrationForm.email, {
-                                label: 'Email'
+                                label: 'Email *'
                             }) }}
                             <div class="civility">
                                 {{ form_row(registrationForm.civility, {
-                                    label: 'Civilité'
+                                    label: 'Civilité *'
                                 }) }}
                             </div>
                             <div class="birth-date">
                                 {{ form_row(registrationForm.birthDate, {
-                                    label: 'Date de naissance'
+                                    label: 'Date de naissance *'
                                 }) }}
                             </div>
                             {{ form_row(registrationForm.plainPassword, {
-                                label: 'Mot de passe'
+                                label: 'Mot de passe *'
                             }) }}                        
                             <div class="terms">
                                 {{ form_row(registrationForm.agreeTerms, {
@@ -52,6 +52,7 @@
                                 }) }}
                                 <span>Accepter les&nbsp<a href="{{ path('about') }}">termes</a><span>
                             </div>
+                            <small>Les chants avec * doivent être renseignés</small>
                         </div>
                         <!-- ADD AN EMAIL VALIDATOR FOR USER -->
                         <div class="valid-btn">

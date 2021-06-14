@@ -8,7 +8,7 @@
 
     class AboutController extends AbstractController {
         /**
-         * @Route("/aboutUs", name="about")
+         * @Route("/informations", name="about")
          */
         public function about() {
             return $this->render("about/about.html.twig");

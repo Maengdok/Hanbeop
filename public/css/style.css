@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: alexa-std, sans-serif;
 }
 
-.kr {
+.kr:lang(ko) {
     font-family: source-han-serif-korean, serif;
     font-style: normal;
     font-weight: 400;

@@ -45,6 +45,16 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.informations form {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .informations form .row .col div {
@@ -57,8 +67,7 @@
 }
 
 .informations input {
-    width: 90%;
-    margin: auto auto;
+    width: 100%;
 }
 
 #user_form_birthDate {
@@ -66,40 +75,11 @@
     flex-direction: row;
 }
 
-
-.favorites-card {
-    width: 20%;
-    margin: 0 10px 0 10px;
-}
-
-.favorites-title {
-    width: 100%;
-    height: 30px;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    background: #022859;
-    color: white;
-}
-
-.favorites-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-    width: 100%;
-    background: #EEEEEE;
-}
-
-.favorites-body a {
-    padding: 5px;
-}
-
 .premium {
     border-radius: 10px;
     padding: 0 5px;
     margin: 0 5px;
-    font-size: 10px;
+    font-size: 15px;
     border: 1px solid rgb(53, 53, 174);
     color:rgb(53, 53, 174);
 }

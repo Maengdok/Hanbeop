@@ -42,10 +42,10 @@ class RegistrationFormType extends AbstractType
                 ],
                 'mapped' => false,
                 'first_options' => [
-                    'label' => 'Mot de passe',
+                    'label' => 'Mot de passe *',
                 ],
                 'second_options' => [
-                    'label' => 'Confirmer Mot de passe',
+                    'label' => 'Confirmer Mot de passe *',
                 ],
                 'constraints' => [
                     new NotBlank([

@@ -6,6 +6,8 @@
         <div class="connection">
             {% if is_granted('ROLE_ADMIN') %}
                 <span class="admin-link"><a href="{{ path('admin') }}">Admin</a></span>
+            {% elseif is_granted('ROLE_PROFESSOR') %}
+                <span class="admin-link"><a href="{{ path('admin_exercice_index') }}">admin/exercices</a></span>
             {% endif %}
             <span class="profil-link"><a href="{{ path('profile') }}">Mon profil</a></span>
             <span class="logout-link"><a href="{{ path('app_logout') }}">Se déconnecter</a></span>

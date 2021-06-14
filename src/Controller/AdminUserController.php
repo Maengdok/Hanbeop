@@ -77,21 +77,6 @@ class AdminUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $originalPassword = $user->getPassword();
-            $password = $form->get('password')->getData();
-            
-            if (!is_null($password)) {   
-                $user->setPassword(
-                    $passwordEncoder->encodePassword(
-                        $user,
-                        $form->get('password')->getData()
-                        )
-                    );
-                }
-            else {
-                $user->setPassword($originalPassword);
-            }
-
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_user_index');

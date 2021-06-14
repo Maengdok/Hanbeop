@@ -12,6 +12,7 @@
         </ol>
     </nav>
 </div>
+<div class="block">
     <h1>Modifier exemple</h1>
     <div class="col-1 d-flex d-inline">
         <a href="{{ path('admin_example_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
@@ -19,5 +20,6 @@
     </div>
 
     {{ include('Admin/admin_example/_form.html.twig', {'button_label': 'Update'}) }}
+</div>
 
 {% endblock %}

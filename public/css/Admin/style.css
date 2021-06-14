@@ -1,4 +1,62 @@
+.block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form[name="grammar"],
+form[name="letter"],
+form[name="meaning"],
+form[name="formulation"],
+form[name="example"],
+form[name="level"],
+form[name="category"],
+form[name="exercice"],
+form[name="question"],
+form[name="answer"] {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form[name="grammar"] div,
+form[name="letter"] div,
+form[name="meaning"] div,
+form[name="formulation"] div,
+form[name="example"] div,
+form[name="level"] div,
+form[name="category"] div,
+form[name="exercice"] div,
+form[name="question"] div,
+form[name="answer"] div {
+    display: flex;
+    flex-direction: column;
+}
+
+form[name="grammar"] button,
+form[name="letter"] button,
+form[name="meaning"] button,
+form[name="formulation"] button,
+form[name="example"] button,
+form[name="level"] button,
+form[name="category"] button,
+form[name="exercice"] button,
+form[name="question"] button,
+form[name="answer"] button {
+    width: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input[type="checkbox"] {
+    position: relative;
+    right: 49%;
+}
+
 textarea {
-    width: 700px;
+    width: 100%;
     height: 300px;
 }

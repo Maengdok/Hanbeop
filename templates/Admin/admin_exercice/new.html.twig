@@ -12,7 +12,9 @@
         </ol>
     </nav>
 </div>
+<div class="block">
     <h1>Nouvel exercice</h1>
         <a href="{{ path('admin_exercice_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a>
     {{ include('Admin/admin_exercice/_form.html.twig') }}
+</div>
 {% endblock %}

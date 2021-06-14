@@ -12,9 +12,11 @@
         </ol>
     </nav>
 </div>
+<div class="block">
     <h1>Nouvelle signification</h1>
     <a href="{{ path('admin_meaning_index') }}"><button class="btn btn-outline-info px-4"><i class="fas fa-undo-alt"></i></button></a> 
 
     {{ include('Admin/admin_meaning/_form.html.twig') }}
+</div>
 
 {% endblock %}

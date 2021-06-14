@@ -33,30 +33,9 @@ class UserType extends AbstractType
                     'choices' => [
                         'Utilisateur' => 'ROLE_USER',
                         'Premium' => 'ROLE_PREMIUM',
+                        'Professeur' => 'ROLE_PROFESSOR',
                         'Admin' => 'ROLE_ADMIN'
                     ]
-                ]
-            ])
-            ->add('password', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'label' => ' ',
-                'invalid_message' => 'Les champs doivent être identiques.',
-                'options' => [
-                    'required' => false,
-                    'always_empty' => true
-                ],
-                'first_options' => [
-                    'label' => 'Mot de passe'
-                ],
-                'second_options' => [
-                    'label' => 'Confirmer le mot de passe'
-                ],
-                'constraints' => [
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit comprendre un minimum de {{ limit }} caractères.',
-                        'max' => 4096
-                    ]),
                 ]
             ])
             ->add('pseudo', TextType::class, [

@@ -5,6 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+    {% if is_granted('ROLE_ADMIN') %}
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="{{ path('admin') }}">Admin</a>
@@ -90,6 +91,41 @@
           </ul>
         </li>
       </ul>
+    {% endif %}
+    {% if is_granted('ROLE_PROFESSOR') %}
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Exercice
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_exercice_index') }}">Exercices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_question_index') }}">Questions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin_answer_index') }}">Réponses</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ajouter
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Exercice</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('admin_exercice_new') }}">Ajouter Exercice</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_question_new') }}">Ajouter Question</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_answer_new') }}">Ajouter Réponse</a></li>
+          </ul>
+        </li>
+      </ul>
+    {% endif %}
     </div>
   </div>
 </nav>

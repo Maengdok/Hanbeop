@@ -4,6 +4,13 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    # mailer_transport: smtp
+    # mailer_host: smtp.ionos.fr
+    # mailer_port: 465
+    # mailer_user: axel.pion@maengdok.fr
+    # mailer_password: 
+    # mailer_auth_mode: login
+    # sender_name: Maengdok
 
 services:
     # default configuration for services in *this* file
