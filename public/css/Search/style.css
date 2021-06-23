@@ -34,7 +34,7 @@
 
 .classification-section-title, .categories-section-title {
     width: 100%;
-    padding-left: 10px;
+    padding: 5px 0 5px 10px;
     background: #022859;
     color: white;
 }
@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .category-title .see-more {

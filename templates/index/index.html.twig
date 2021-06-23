@@ -26,7 +26,7 @@
                                     {% endfor %}
                                     {% for category in categories %}
                                         {% if grammar.category.id == category.id %}
-                                            <span class="category"><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a></span>
+                                            <span class="category"><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name | u.truncate(7, '', false) }}</a></span>
                                         {% endif %}
                                     {% endfor %}
                                 </span>
@@ -52,7 +52,7 @@
                                     {% endfor %}
                                     {% for category in categories %}
                                         {% if grammar.category.id == category.id %}
-                                            <span class="category"><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name }}</a></span>
+                                            <span class="category"><a href="{{ path('search_gCategory', {id: category.id}) }}">{{ category.name | u.truncate(7, '', false) }}</a></span>
                                         {% endif %}
                                     {% endfor %}
                                 </span>
