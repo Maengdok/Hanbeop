@@ -47,7 +47,7 @@ class SearchController extends AbstractController
     }
 
     /**
-     * @Route("/recherche/grammaire/par-letter/{id}", name="search_gLetter")
+     * @Route("/recherche/grammaire/par-lettre/{id}", name="search_gLetter")
      */
     public function grammarLetter($id): Response
     {
@@ -64,7 +64,7 @@ class SearchController extends AbstractController
     }
 
     /**
-     * @Route("/recherche/exercice/par-access/gratuit", name="search_eFree")
+     * @Route("/recherche/exercice/par-acces/gratuit", name="search_eFree")
      */
     public function exerciceFree(): Response
     {
@@ -78,7 +78,7 @@ class SearchController extends AbstractController
     }
 
     /**
-     * @Route("/recherche/exercice/par-access/premium", name="search_ePremium")
+     * @Route("/recherche/exercice/par-acces/premium", name="search_ePremium")
      */
     public function exercicePremium(): Response
     {

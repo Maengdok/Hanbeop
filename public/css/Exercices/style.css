@@ -101,6 +101,7 @@
 .classification-section-title, .created-section-title {
     width: 100%;
     background: #022859;
+    padding: 5px 0 0 10px;
     color: white;
 }
 
@@ -466,7 +467,6 @@
         width: 100%;
         background: #022859;
         color: white;
-        padding: 0 10px;
     }
     
     .exercices-classification, .exercices-created {
@@ -482,11 +482,11 @@
     
     .created-title a {
         padding-left: 10px;
-        margin: 0 10px;
+        margin: 0 0px;
     }
     
     .created-title-block a h4 {
-        width: 100%;
+        width: 90px;
         font-size: 12px;
         margin-right: 10px;
     }
@@ -494,6 +494,7 @@
     .created-title-block strong {
         margin-right: 10px;
         font-size: 12px;
+        width: 100%;
     }
     
     .created-title-block a p {
@@ -728,6 +729,7 @@
     }
 }
 
+
 /***********************/
 /*** >800px & <966px ***/
 /***********************/
@@ -828,7 +830,6 @@
         width: 100%;
         background: #022859;
         color: white;
-        padding: 0 10px;
     }
     
     .exercices-classification, .exercices-created {
@@ -837,7 +838,7 @@
     
     .created-title {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
         margin: 10px;
     }
@@ -848,7 +849,7 @@
     }
     
     .created-title-block a h4 {
-        width: 100%;
+        width: 100px;
         font-size: 12px;
         margin-right: 10px;
     }
@@ -856,6 +857,7 @@
     .created-title-block strong {
         margin-right: 10px;
         font-size: 12px;
+        width: 60%x;
     }
     
     .created-title-block a p {
@@ -1497,13 +1499,13 @@
     .created-title-block a h4 {
         font-size: 12px;
         margin-right: 10px;
-        width: 40%;
+        width: 100px;
     }
     
     .created-title-block strong {
         font-size: 12px;
         margin-right: 10px;
-        width: 40%;
+        width: 150px;
     }
     
     .created-title-block a p {

@@ -18,7 +18,7 @@
                         {% if level.name == 'Débutant' %}
                             {% if grammar.level.name == 'Débutant' and i <= 10 %}
                                 <span class="grammar">
-                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }} - 
+                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}"><span class="kr">{{ grammar.title }}</span> - 
                                     {% for meaning in meanings %}
                                         {% if meaning.grammar.id == grammar.id %}
                                             {{ meaning.content }}</a>
@@ -44,7 +44,7 @@
                         {% if level.name == 'Moyen' %}
                             {% if grammar.level.name == 'Moyen' and i <= 10 %}
                                 <span class="grammar">
-                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}">{{ grammar.title }} - 
+                                    <a href="{{ path('show_grammar', {id: grammar.id}) }}"><span class="kr">{{ grammar.title }}</span> - 
                                     {% for meaning in meanings %}
                                         {% if meaning.grammar.id == grammar.id %}
                                             {{ meaning.content }}</a>
@@ -71,7 +71,7 @@
                 {% for exercice in exercices %}
                     <span class="exercice">
                         {% if i < 20 and n >= 0 %}
-                            <a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.grammar.title }} - {{ exercice.title }} - {{ exercice.createdAt | date('d/m/Y') }}</a>
+                            <a href="{{ path('show_exercice', {id: exercice.id}) }}"><span class="kr">{{ exercice.grammar.title }}</span> - <strong>{{ exercice.title }}</strong> - {{ exercice.createdAt | date('d/m/Y') }}</a>
                             <span class="difficulty-isPremium">
                                 {% if exercice.difficulty == 1 %}
                                     <a class="easy" href="{{ path('search_eEasy') }}">Facile</a>
@@ -91,7 +91,7 @@
                             </span>
                         {% set n = n - 1 %}
                         {% elseif i >= 20 and n >= (i - 20) %}
-                            <a href="{{ path('show_exercice', {id: exercice.id}) }}">{{ exercice.grammar.title }} - {{ exercice.title }} - {{ exercice.createdAt | date('d/m/Y') }}</a>
+                            <a href="{{ path('show_exercice', {id: exercice.id}) }}"><span class="kr">{{ exercice.grammar.title }}</span> - <strong>{{ exercice.title }}</strong> - {{ exercice.createdAt | date('d/m/Y') }}</a>
                             <span class="difficulty-isPremium">
                                 {% if exercice.difficulty == 1 %}
                                     <a class="easy" href="{{ path('search_eEasy') }}">Facile</a>

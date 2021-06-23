@@ -88,6 +88,10 @@
     color: #590212;
 }
 
+.docu-page p, .about-page p {
+    font-size: 18px;
+}
+
 /***********************/
 /*** >374px & <800px ***/
 /***********************/
@@ -303,15 +307,15 @@
 
     .docu-title h2, .about-title h2 {
         margin: 20px 0 0 0;
-        font-size: 15px;
+        font-size: 18px;
     }
     
     .docu-page p, .about-page p {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .docu-page table, .about-page table {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .hangeul {

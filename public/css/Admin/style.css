@@ -6,6 +6,16 @@
     flex-direction: column;
 }
 
+.cards {
+    width: 60%;
+    margin: auto;
+}
+
+.cards .card {
+    width: 200px;
+    height: 200px;
+}
+
 form[name="grammar"],
 form[name="letter"],
 form[name="meaning"],

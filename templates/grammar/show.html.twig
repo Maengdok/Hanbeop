@@ -7,14 +7,14 @@
 {% block body %}
 
     <div class="link-path">
-        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('grammar') }}">Grammaire</a> > {{ grammar.title }}</span>
+        <span><a href="{{ path('index')}}"><i class="fas fa-home"></i> Home</a> > <a href="{{ path('grammar') }}">Grammaire</a> > <span class="kr">{{ grammar.title }}</span></span>
     </div>
     <div class="grammar-detail-page">
         <div class="grammar-detail-section">
             <div class="title-path">
                 <div class="head-title">
                     <div class="title-add">
-                        <h1>{{ grammar.title }}</h1> 
+                        <h1><span class="kr">{{ grammar.title }}</span></h1> 
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <div class="notion-separator"></div>
                     <div id ="notion-block" style="display:none;">
                         <div class="notion-body">
-                            <strong>{{ grammar.title }}</strong>
+                            <span class="kr">{{ grammar.title }}</span>
                             <div class="cat-class">
                                 <span class="category-tags">
                                     <a href="{{ path('search_gCategory', {id: grammar.category.id}) }}">{{ grammar.category.name}}</a>
@@ -71,7 +71,7 @@
                         {% for formulation in formulations %}
                             {% for mnng in meaning %}
                                 {% if formulation.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
-                                    {{ formulation.content | nl2br }}<br><br>
+                                    <span class="kr">{{ formulation.content | nl2br }}<span><br><br>
                                 {% endif %}
                             {% endfor %}
                         {% endfor %}
@@ -89,7 +89,7 @@
                         {% for elm in examples %}
                             {% for mnng in meaning %}
                                 {% if elm.meaning.id == mnng.id and mnng.grammar.id == grammar.id %}
-                                    <p>{{ elm.content | nl2br }}</p><br><br>
+                                    <p class="kr">{{ elm.content | nl2br }}</p><br><br>
                                 {% endif %}
                             {% endfor %}
                         {% endfor %}

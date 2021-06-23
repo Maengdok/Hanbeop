@@ -42,7 +42,7 @@
                                         {% if (nbIteration / nbIteration) == 1  and nbRepetition  == 1 %}
                                             {% if exercice.grammar.title == grammar.title %}
                                                 <div class="categories-title">
-                                                    <h4><a href="{{ path('show_grammar', {id: grammar.id }) }}">{{ exercice.grammar.title }}</a></h4>
+                                                    <h4><a href="{{ path('show_grammar', {id: grammar.id }) }}"><span class="kr">{{ exercice.grammar.title }}</span></a></h4>
                                                     <span class="see-more" onclick="seeMore('{{ grammar.title }}')">Voir plus <i class="fas fa-sort-down"></i></span>
                                                 </div>
                                                 <div class="categories-separator"></div>
@@ -93,7 +93,7 @@
                                     <div class="created-title">
                                         <div class="created-title-block">
                                             <a href="{{ path('show_exercice', {id: exercice.id}) }}">
-                                                <h4>{{ exercice.grammar }}</h4>
+                                                <h4><span class="kr">{{ exercice.grammar }}</span></h4>
                                                 <strong>{{ exercice.title }}&nbsp</strong>
                                                 <p>{{ exercice.createdAt | date('d/m/Y') }}</p>
                                             </a>
