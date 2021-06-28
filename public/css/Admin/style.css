@@ -61,11 +61,6 @@ form[name="answer"] button {
     margin-right: auto;
 }
 
-form input[type="checkbox"] {
-    position: relative;
-    right: 49%;
-}
-
 textarea {
     width: 100%;
     height: 300px;

@@ -18,7 +18,8 @@ class AnswerType extends AbstractType
                 'label' => 'Contenu'
             ])
             ->add('isCorrect', CheckboxType::class, [
-                'label' => 'Est-ce correcte ?'
+                'label' => 'Est-ce correcte ?',
+                'required' => false
             ])
             ->add('question')
         ;

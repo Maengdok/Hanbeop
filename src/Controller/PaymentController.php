@@ -20,7 +20,7 @@ class PaymentController extends AbstractController
 {
 
     /**
-     * @Route("/payment-index", name="payment_index")
+     * @Route("/abonnement", name="payment_index")
      */
     public function index() {
         return $this->render('payment/paymentIndex.html.twig');

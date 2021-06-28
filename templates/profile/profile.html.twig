@@ -7,7 +7,7 @@
 {% block body %}
 
     <div class="link-path">
-        <span><a href="{{ path('index') }}"><i class="fas fa-home"></i> Home</a> > Mon profil</span>
+        <span><a href="{{ path('index') }}"><i class="fas fa-home"></i> Accueil</a> > Mon profil</span>
     </div>
     <div class="profile-page">
         {% if is_granted('ROLE_USER') %}    
@@ -71,18 +71,18 @@
                                 </div>
                             </div>
                             <div class="valid-btn">
-                                <button type="submit" class="btn valid-btn">S'enregistrer</button>
+                                <button type="submit" class="btn valid-btn">Enregistrer</button>
                             </div>
                         {{ form_end(formUser) }}
                     </div>
                     <div class="cancel_delete">
                         {% if is_granted('ROLE_PREMIUM') %}
                             <a href="{{ path('profile_cancel') }}">
-                                <span>Résilier l'abonnement</a>
+                                <span class="p_button">Résilier l'abonnement</a>
                             </a>
                         {% endif %}
                         <a href="{{ path('profile_delete') }}">
-                            <span class="delete">Supprimer le profil</span>
+                            <span class="delete p_button">Supprimer le profil</span>
                         </a>
                     </div>
                 </div>
