@@ -106,7 +106,28 @@
                     <p>
                     <div id ="exercices-block" style="display:none;">
                         {% for exercice in grammar.exercices %}
-                            <a href="{{ path('show_exercice', {id: exercice.id}) }}"><i class="fas fa-arrow-right"></i> {{ exercice.title }}</a><br>
+                            <div class="exo">
+                                <a href="{{ path('show_exercice', {id: exercice.id}) }}"><i class="fas fa-arrow-right"></i> {{ exercice.title }}</a>
+                                <div class="diff-acc">
+                                    <div class="difficulty">
+                                        {% if exercice.difficulty == 1 %}
+                                            <a href="{{ path('search_eEasy') }}"><span class="easy">Facile</span></a>
+                                            {% elseif exercice.difficulty == 2 %}
+                                                <a href="{{ path('search_eMedium') }}"><span class="medium">Moyen</span></a>
+                                            {% elseif exercice.difficulty == 3 %}
+                                                <a href="{{ path('search_eHard') }}"><span class="hard">Difficile</span></a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="access">
+                                        {% if exercice.isPremium == false %}
+                                            <a href="{{ path('search_eFree') }}"><span class="free">Gratuit</span></a>
+                                            {% else %}
+                                                <a href="{{ path('search_ePremium') }}"><span class="premium">Premium</span></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
                         {% endfor %}
                     </div>
                     </p>
